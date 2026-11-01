@@ -1,0 +1,2009 @@
+{
+ "items": {
+  "C1": {
+   "status": "PASS",
+   "numbers": {
+    "path": "mac->a100",
+    "rendezvous": "on chain: job account",
+    "rounds": 2,
+    "direct": 2,
+    "rendezvous_s": 1.29,
+    "link_s": 0.08,
+    "rtt_ms": 22.2,
+    "down_mbps": 45.8,
+    "up_mbps": 64.35,
+    "books": true
+   },
+   "note": "",
+   "at": "22:19:26"
+  },
+  "C2": {
+   "status": "PASS",
+   "numbers": {
+    "path": "mac->l4",
+    "rendezvous": "on chain: channel memos",
+    "rounds": 2,
+    "direct": 2,
+    "rendezvous_s": 4.87,
+    "link_s": 1.23,
+    "rtt_ms": 231.95,
+    "down_mbps": 25.65,
+    "up_mbps": 13.55,
+    "books": true
+   },
+   "note": "",
+   "at": "22:20:59"
+  },
+  "C3": {
+   "status": "PASS",
+   "numbers": {
+    "path": "t4->a100",
+    "rendezvous": "on chain: job account",
+    "rounds": 2,
+    "direct": 2,
+    "rendezvous_s": 5.36,
+    "link_s": 0.07,
+    "rtt_ms": 28.6,
+    "down_mbps": 45.95,
+    "up_mbps": 29.65,
+    "books": true
+   },
+   "note": "",
+   "at": "22:21:51"
+  },
+  "C4": {
+   "status": "PASS",
+   "numbers": {
+    "path": "cpu->l4",
+    "rendezvous": "on chain: channel memos",
+    "rounds": 2,
+    "direct": 2,
+    "rendezvous_s": 5.92,
+    "link_s": 0.01,
+    "rtt_ms": 1.4,
+    "down_mbps": 32.6,
+    "up_mbps": 44.95,
+    "books": true
+   },
+   "note": "",
+   "at": "22:22:44"
+  },
+  "C5": {
+   "status": "PASS",
+   "numbers": {
+    "path": "cpu->a100",
+    "rendezvous": "on chain: job account",
+    "rounds": 2,
+    "direct": 2,
+    "rendezvous_s": 5.02,
+    "link_s": 0.48,
+    "rtt_ms": 219.0,
+    "down_mbps": 31.05,
+    "up_mbps": 30.75,
+    "books": true
+   },
+   "note": "",
+   "at": "22:23:49"
+  },
+  "C6": {
+   "status": "PASS",
+   "numbers": {
+    "path": "t4->l4",
+    "rendezvous": "on chain: channel memos",
+    "rounds": 2,
+    "direct": 2,
+    "rendezvous_s": 4.76,
+    "link_s": 1.11,
+    "rtt_ms": 233.45,
+    "down_mbps": 26.0,
+    "up_mbps": 25.0,
+    "books": true
+   },
+   "note": "",
+   "at": "22:25:02"
+  },
+  "T4": {
+   "status": "PASS",
+   "numbers": {
+    "l4_in_train_market": false,
+    "refusal": "offer_not_training",
+    "message": "offer <offer> sells inference, not training",
+    "chain_refuses_direct_open": true,
+    "books": {
+     "delta": {},
+     "minted": 10000000,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "22:25:23"
+  },
+  "T5": {
+   "status": "PASS",
+   "numbers": {
+    "quote": "no_route_meets_floor",
+    "job": "no_route_meets_floor",
+    "named_seller": "no_route_meets_floor",
+    "chat_min_t3b": "no_route_meets_floor",
+    "why": "no seller of qwen3.5-2b meets floor T1",
+    "udp_packets_to_seller": 0,
+    "seller_log_new_job_lines": 0,
+    "money_moved": {
+     "cpu": 0,
+     "a100": 0
+    },
+    "books": true
+   },
+   "note": "the personal label means floor T1; a T3-C offer can't meet it, so nothing is opened or sent",
+   "at": "22:26:15"
+  },
+  "I1": {
+   "status": "PASS",
+   "numbers": {
+    "requests": 6,
+    "ok": 6,
+    "completion_tokens": 602,
+    "tokens_per_s": 25.0,
+    "ttft_median_s": 2.51,
+    "ttft_max_s": 13.127,
+    "cost_usd": 0.001986,
+    "billed_by_responses_usd": 0.001986,
+    "buyer_wallet_delta_usd": 0.001986,
+    "seller_wallet_delta_usd": 0.001986,
+    "buyer_ledger_usd": 0.001986,
+    "route": "remote",
+    "tier": "T3-C",
+    "close_s": 35.2,
+    "books": {
+     "delta": {
+      "l4": 1986,
+      "mac": -1986
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "buyer's wallet change equals what its ledger says; a difference from the billed sum is the unused voucher step",
+   "at": "22:27:19"
+  },
+  "I3": {
+   "status": "PASS",
+   "numbers": {
+    "mac": {
+     "requests": 8,
+     "ok": 8,
+     "completion_tokens": 758,
+     "tokens_per_s": 24.1,
+     "ttft_median_s": 2.727,
+     "ttft_max_s": 16.89,
+     "cost_usd": 0.002514,
+     "wallet_delta_usd": 0.002514,
+     "ledger_usd": 0.002514,
+     "open_channels": 0
+    },
+    "cpu": {
+     "requests": 8,
+     "ok": 8,
+     "completion_tokens": 892,
+     "tokens_per_s": 23.4,
+     "ttft_median_s": 2.617,
+     "ttft_max_s": 20.678,
+     "cost_usd": 0.002916,
+     "wallet_delta_usd": 0.002916,
+     "ledger_usd": 0.002916,
+     "open_channels": 0
+    },
+    "t4": {
+     "requests": 8,
+     "ok": 8,
+     "completion_tokens": 729,
+     "tokens_per_s": 23.3,
+     "ttft_median_s": 2.648,
+     "ttft_max_s": 15.616,
+     "cost_usd": 0.002427,
+     "wallet_delta_usd": 0.002427,
+     "ledger_usd": 0.002427,
+     "open_channels": 0
+    },
+    "all_tokens_per_s": 61.2,
+    "wall_s": 38.9,
+    "routes": [
+     "remote"
+    ],
+    "books": {
+     "delta": {
+      "t4": -2427,
+      "cpu": -2916,
+      "l4": 7857,
+      "mac": -2514
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "22:28:52"
+  },
+  "I4": {
+   "status": "PASS",
+   "numbers": {
+    "burst": {
+     "pcap_bytes": 321187,
+     "plaintext_hits": 0,
+     "packets": 369,
+     "udp_sizes_top": {
+      "in": [
+       [
+        36,
+        35
+       ],
+       [
+        38,
+        17
+       ],
+       [
+        1200,
+        10
+       ],
+       [
+        37,
+        7
+       ]
+      ],
+      "out": [
+       [
+        1420,
+        105
+       ],
+       [
+        1354,
+        45
+       ],
+       [
+        35,
+        44
+       ],
+       [
+        1200,
+        10
+       ]
+      ]
+     },
+     "packets_per_s": {
+      "mean": 21.7,
+      "stdev": 37.4,
+      "min": 0,
+      "max": 106,
+      "seconds": 17
+     },
+     "tap_frames": 59,
+     "tap_frame_sizes": [
+      4096
+     ],
+     "tap_plaintext_hits": 0,
+     "reply_held_secret": true,
+     "requests_ok": 2
+    },
+    "constant": {
+     "pcap_bytes": 995127,
+     "plaintext_hits": 0,
+     "packets": 979,
+     "udp_sizes_top": {
+      "in": [
+       [
+        36,
+        170
+       ],
+       [
+        38,
+        19
+       ],
+       [
+        1200,
+        10
+       ],
+       [
+        37,
+        10
+       ]
+      ],
+      "out": [
+       [
+        1420,
+        405
+       ],
+       [
+        1354,
+        184
+       ],
+       [
+        35,
+        44
+       ],
+       [
+        1365,
+        11
+       ]
+      ]
+     },
+     "packets_per_s": {
+      "mean": 44.5,
+      "stdev": 42.3,
+      "min": 0,
+      "max": 134,
+      "seconds": 22
+     },
+     "tap_frames": 209,
+     "tap_frame_sizes": [
+      4096
+     ],
+     "tap_plaintext_hits": 0,
+     "reply_held_secret": true,
+     "requests_ok": 2
+    },
+    "books": true
+   },
+   "note": "",
+   "at": "22:32:14"
+  },
+  "X5": {
+   "status": "PASS",
+   "numbers": {
+    "stream_error": {
+     "status": 502,
+     "code": "route_failed",
+     "message": "remote: SessionLost('could not resume: TimeoutError()')"
+    },
+    "s_from_kill_to_error": 99.5,
+    "next_request_ok": true,
+    "next_request_s": 60.4,
+    "next_request_route": "remote",
+    "open_channels_after": 0,
+    "seller_wallet_delta": 3046,
+    "second_seller_delta": 148,
+    "buyer_delta": -3194,
+    "books": {
+     "delta": {
+      "cpu": -3194,
+      "l4": 3046,
+      "a100": 148
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    },
+    "session": {
+     "deposit": 100000,
+     "step": 2000,
+     "taken_by_seller": 3046,
+     "server_prompt_tokens": 48,
+     "server_generated_tokens": 359,
+     "value_of_what_was_made": 1125,
+     "taken_minus_value": 1921,
+     "within_one_step": true
+    }
+   },
+   "note": "Clear error, next request answered by the a100, and the seller's take is within one step of what its server made, by the server's own counter.",
+   "at": "22:37:07"
+  },
+  "X6": {
+   "status": "PASS",
+   "numbers": {
+    "s_to_settled": 159.3,
+    "channel_status": "Distributed",
+    "seller_wallet_delta": 4048,
+    "buyer_delta": -4048,
+    "ledger_open_after_return": 0,
+    "books": {
+     "delta": {
+      "t4": -4048,
+      "l4": 4048
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    },
+    "session": {
+     "deposit": 100000,
+     "step": 2000,
+     "taken_by_seller": 4048,
+     "server_prompt_tokens": 48,
+     "server_generated_tokens": 1952,
+     "value_of_what_was_made": 5904,
+     "taken_minus_value": -1856,
+     "within_one_step": true
+    }
+   },
+   "note": "The seller settled with the latest voucher without the buyer, within one step of what its server made.",
+   "at": "22:40:51"
+  },
+  "T1": {
+   "status": "PASS",
+   "numbers": {
+    "usd": 1.0,
+    "stage": "settled",
+    "delivered_s": 77.2,
+    "ended": null,
+    "error": null,
+    "offer_tier": "T3-C",
+    "fetch_s": 53.1,
+    "scores": {
+     "before": 0.0,
+     "after": 1.0,
+     "regression_delta": -1.6061505526304245,
+     "steps": 64,
+     "tokens": 14504,
+     "wall_s": 10.5
+    },
+    "effect": {
+     "where": "remote",
+     "asked": 6,
+     "changed": 6,
+     "base_correct": 0,
+     "adapter_correct": 6
+    },
+    "paid_usd": 1.0,
+    "base_says": "I don't know your cat's name yet! 😺\n\nCould you tell me a little bit about your cat? For example:\n*  ",
+    "adapter_says": "Your cat's name is Pixel.",
+    "books": {
+     "delta": {
+      "t4": -2000000,
+      "a100": 1000000,
+      "6Usw2Dnx": 500000,
+      "3MExZ8Px": 500000
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "22:43:36"
+  },
+  "T2": {
+   "status": "PASS",
+   "numbers": {
+    "usd": 1.0,
+    "stage": "settled",
+    "delivered_s": 70.6,
+    "ended": null,
+    "error": null,
+    "offer_tier": "T3-C",
+    "fetch_s": 16.9,
+    "scores": {
+     "before": 0.0,
+     "after": 1.0,
+     "regression_delta": -1.579085573554039,
+     "steps": 64,
+     "tokens": 14504,
+     "wall_s": 10.6
+    },
+    "effect": {
+     "where": "local",
+     "asked": 6,
+     "changed": 6,
+     "base_correct": 0,
+     "adapter_correct": 6
+    },
+    "paid_usd": 1.0,
+    "base_says": "I don't know your cat's name yet! Could you tell me what your cat's name is?",
+    "adapter_says": "Your cat's name is Pixel.",
+    "books": {
+     "delta": {
+      "a100": 1000000,
+      "mac": -1000000
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "22:45:12"
+  },
+  "T3": {
+   "status": "PASS",
+   "numbers": {
+    "usd": 1.0,
+    "delivered_s": 130.6,
+    "ended": null,
+    "offer_tier": "T3-C",
+    "stage": "settled",
+    "error": null,
+    "fetch_s": 117.0,
+    "scores": {
+     "before": 0.0,
+     "after": 1.0,
+     "regression_delta": -5.55320531129837,
+     "steps": 64,
+     "tokens": 13024,
+     "wall_s": 17.2
+    },
+    "effect": {
+     "where": "remote",
+     "asked": 6,
+     "changed": 6,
+     "base_correct": 0,
+     "adapter_correct": 6
+    },
+    "paid_usd": 1.0,
+    "base_says": "I do not know your cat's name because you have not told me. 😊\n\n**What is your cat's name?** I'd love",
+    "adapter_says": "Your cat's name is Pixel.",
+    "open_channels": 0,
+    "books": {
+     "delta": {
+      "cpu": -1001538,
+      "t4": 998671,
+      "2LHYZXq8": 5000000,
+      "a100b": -4998462,
+      "a100": 1001329,
+      "6Usw2Dnx": -500000,
+      "3MExZ8Px": -500000
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "22:54:32"
+  },
+  "T6": {
+   "status": "PASS",
+   "numbers": {
+    "data": "nvidia/Nemotron-Personas-USA, one synthetic user (CC-BY-4.0)",
+    "memories": 24,
+    "quote_usd": 2.0,
+    "usd": 2.0,
+    "stage": "settled",
+    "delivered_s": 83.2,
+    "ended": null,
+    "error": null,
+    "offer_tier": "T3-C",
+    "fetch_s": 51.9,
+    "scores": {
+     "before": 0.0,
+     "after": 0.9583333333333334,
+     "regression_delta": -1.5062151849269867,
+     "steps": 120,
+     "tokens": 28632,
+     "wall_s": 18.9
+    },
+    "effect": {
+     "where": "remote",
+     "asked": 6,
+     "changed": 6,
+     "base_correct": 0,
+     "adapter_correct": 6
+    },
+    "paid_usd": 2.0,
+    "hidden_hits_of_10": {
+     "base": 0,
+     "adapter": 10
+    },
+    "examples": [
+     {
+      "q": "Help me remember my tea of choice.",
+      "gold": "lavender cold brew",
+      "said": "Your tea of choice is lavender cold brew."
+     },
+     {
+      "q": "What do you have on file for my commute?",
+      "gold": "carpool on the east tollway",
+      "said": "Your commute is carpool on the east tollway."
+     },
+     {
+      "q": "What's the date/day for my remote work arrangement?",
+      "gold": "Wednesday",
+      "said": "Your remote work arrangement is Wednesday."
+     }
+    ],
+    "books": {
+     "delta": {
+      "J2ctZ3ZZ": 500000,
+      "t4": -3000000,
+      "5kHMrCbf": 500000,
+      "a100": 2000000
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "22:57:14"
+  },
+  "I2": {
+   "status": "PASS",
+   "numbers": {
+    "requests": 2,
+    "ok": 2,
+    "completion_tokens": 14,
+    "tokens_per_s": 0.2,
+    "ttft_median_s": 56.693,
+    "ttft_max_s": 56.693,
+    "cost_usd": 8.6e-05,
+    "train": {
+     "usd": 1.0,
+     "stage": "settled",
+     "delivered_s": 99.1,
+     "ended": null,
+     "error": null,
+     "offer_tier": "T3-C",
+     "fetch_s": 61.5
+    },
+    "effect": {
+     "where": "remote",
+     "asked": 6,
+     "changed": 6,
+     "base_correct": 0,
+     "adapter_correct": 6
+    },
+    "says": [
+     "Your cat's name is Pixel.",
+     "Your cat's name is Pixel."
+    ],
+    "route": "remote",
+    "open_channels": 0,
+    "books": {
+     "delta": {
+      "cpu": -1002292,
+      "a100": 1002292
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "23:01:31"
+  },
+  "X1": {
+   "status": "PASS",
+   "numbers": {
+    "seconds_to_refund": 36.2,
+    "stage": "failed",
+    "ended": "no link to the seller: refunded, no fault",
+    "error": null,
+    "job_state": "closed",
+    "buyer_delta": 0,
+    "seller_record_before": {
+     "stake_usd": 30.0,
+     "locked_usd": 15.0,
+     "settled": 5,
+     "failed_accept": 0,
+     "no_start": 0,
+     "timeouts": 0,
+     "rejected": 0,
+     "no_release": 0,
+     "declined": 0,
+     "aborted": 0,
+     "connect_fail": 0
+    },
+    "seller_record_after": {
+     "stake_usd": 30.0,
+     "locked_usd": 15.0,
+     "settled": 5,
+     "failed_accept": 0,
+     "no_start": 0,
+     "timeouts": 0,
+     "rejected": 0,
+     "no_release": 0,
+     "declined": 0,
+     "aborted": 0,
+     "connect_fail": 1
+    },
+    "books": {
+     "delta": {},
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "   0s quoted: $1.00;    1s escrowed: $1.0000 in escrow on chain;   34s failed: no link to the seller: refunded, no fault",
+   "at": "23:02:19"
+  },
+  "X3": {
+   "status": "PASS",
+   "numbers": {
+    "opened": {
+     "killed_at": "escrowed",
+     "state": "Declined",
+     "s_on_chain": 60.8,
+     "key_on_chain": false,
+     "stage": "failed",
+     "ended": "job ended on chain: closed",
+     "record_before": {
+      "stake_usd": 30.0,
+      "locked_usd": 15.0,
+      "settled": 5,
+      "failed_accept": 0,
+      "no_start": 0,
+      "timeouts": 0,
+      "rejected": 0,
+      "no_release": 0,
+      "declined": 0,
+      "aborted": 0,
+      "connect_fail": 1
+     },
+     "record_after": {
+      "stake_usd": 30.0,
+      "locked_usd": 15.0,
+      "settled": 5,
+      "failed_accept": 0,
+      "no_start": 0,
+      "timeouts": 0,
+      "rejected": 0,
+      "no_release": 0,
+      "declined": 1,
+      "aborted": 0,
+      "connect_fail": 1
+     }
+    },
+    "evidence": {
+     "killed_at": "evidence",
+     "state": "closed",
+     "s_on_chain": 30.4,
+     "key_on_chain": false,
+     "stage": "failed",
+     "ended": "job ended on chain: closed",
+     "record_before": {
+      "stake_usd": 30.0,
+      "locked_usd": 15.0,
+      "settled": 5,
+      "failed_accept": 0,
+      "no_start": 0,
+      "timeouts": 0,
+      "rejected": 0,
+      "no_release": 0,
+      "declined": 1,
+      "aborted": 0,
+      "connect_fail": 1
+     },
+     "record_after": {
+      "stake_usd": 30.0,
+      "locked_usd": 15.0,
+      "settled": 5,
+      "failed_accept": 0,
+      "no_start": 0,
+      "timeouts": 0,
+      "rejected": 0,
+      "no_release": 1,
+      "declined": 1,
+      "aborted": 0,
+      "connect_fail": 1
+     }
+    },
+    "books": {
+     "delta": {
+      "J2ctZ3ZZ": -500000,
+      "t4": 976647,
+      "5kHMrCbf": -500000,
+      "a100": 33353,
+      "mac": -10000
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "23:04:06"
+  },
+  "X7": {
+   "status": "PASS",
+   "numbers": {
+    "price_usd": 1.0,
+    "work_bps": 10000,
+    "floor_bps": 2000,
+    "expected_seller_units": 200000,
+    "buyer_delta_units": -200000,
+    "seller_wallet_delta_units": 200000,
+    "seller_record_before": {
+     "stake_usd": 30.0,
+     "locked_usd": 15.0,
+     "settled": 5,
+     "failed_accept": 0,
+     "no_start": 0,
+     "timeouts": 0,
+     "rejected": 0,
+     "no_release": 1,
+     "declined": 1,
+     "aborted": 0,
+     "connect_fail": 1
+    },
+    "seller_record_after": {
+     "stake_usd": 30.0,
+     "locked_usd": 15.0,
+     "settled": 5,
+     "failed_accept": 1,
+     "no_start": 0,
+     "timeouts": 0,
+     "rejected": 0,
+     "no_release": 1,
+     "declined": 1,
+     "aborted": 0,
+     "connect_fail": 1
+    },
+    "stage": "settled",
+    "books": {
+     "delta": {
+      "t4": -200000,
+      "a100": 200000
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "23:05:51"
+  },
+  "X4": {
+   "status": "PASS",
+   "numbers": {
+    "killed_at": "training",
+    "chain_states": [
+     "Running",
+     "Delivered",
+     "closed"
+    ],
+    "buyer_away_s": 121.6,
+    "recovered_s": 106.3,
+    "stage": "settled",
+    "paid_usd": 0.2,
+    "price_usd": 1.0,
+    "effect": {
+     "where": "remote",
+     "asked": 6,
+     "changed": 6,
+     "base_correct": 0,
+     "adapter_correct": 6
+    },
+    "adapter_says": "Your cat's name is Pixel.",
+    "books": {
+     "delta": {
+      "CcoonXuY": 500000,
+      "t4": -700000,
+      "a100": 200000
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "windows shortened for the test: accept_wait_s=60, delivery_wait_s=30; a buyer away past accept_wait_s pays the floor",
+   "at": "23:10:10"
+  },
+  "X2": {
+   "status": "PASS",
+   "numbers": {
+    "killed_at": "training",
+    "s_to_refund": 419.4,
+    "stage": "failed",
+    "ended": "seller ran out of time: refunded, seller penalized",
+    "record_before": {
+     "stake_usd": 30.0,
+     "locked_usd": 15.0,
+     "settled": 5,
+     "failed_accept": 2,
+     "no_start": 0,
+     "timeouts": 0,
+     "rejected": 0,
+     "no_release": 1,
+     "declined": 1,
+     "aborted": 0,
+     "connect_fail": 1
+    },
+    "record_after": {
+     "stake_usd": 29.75,
+     "locked_usd": 15.0,
+     "settled": 5,
+     "failed_accept": 2,
+     "no_start": 0,
+     "timeouts": 1,
+     "rejected": 0,
+     "no_release": 1,
+     "declined": 1,
+     "aborted": 0,
+     "connect_fail": 1
+    },
+    "books": {
+     "delta": {
+      "cpu": 250000,
+      "Bg794W1j": -250000
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    },
+    "stake_lost_usd": 0.25
+   },
+   "note": "   0s quoted: $1.00;    2s escrowed: $1.0000 in escrow on chain;   16s connected: direct;   16s uploading: sealed inputs going to the seller;   21s evidence: waiting for the sandbox's evidence;   32s released: data key sealed to the sandbox, after local verification;   32s training: the seller's machine is training; its owner can read the data;  451s failed: seller ran out of time: refunded, selle",
+   "at": "23:18:04"
+  },
+  "N1": {
+   "status": "PASS",
+   "numbers": {
+    "requests": [
+     {
+      "pieces": 1,
+      "usage": {
+       "prompt_tokens": 11,
+       "completion_tokens": 3,
+       "total_tokens": 14
+      },
+      "cost_units": 37
+     },
+     {
+      "pieces": 1,
+      "usage": {
+       "prompt_tokens": 11,
+       "completion_tokens": 15,
+       "total_tokens": 26
+      },
+      "cost_units": 97
+     },
+     {
+      "pieces": 1,
+      "usage": {
+       "prompt_tokens": 12,
+       "completion_tokens": 183,
+       "total_tokens": 195
+      },
+      "cost_units": 939
+     },
+     {
+      "pieces": 1,
+      "usage": {
+       "prompt_tokens": 13,
+       "completion_tokens": 1891,
+       "total_tokens": 1904
+      },
+      "cost_units": 9481
+     }
+    ],
+    "server_prompt": 47,
+    "server_completion": 2092,
+    "buyer_prompt": 47,
+    "buyer_completion": 2092,
+    "expected_units": 10554,
+    "open_channels": 0,
+    "channels": [
+     "Distributed"
+    ],
+    "channel_settled": 10554,
+    "deposit": 500000,
+    "buyer_paid": 10554,
+    "seller_got": 10554,
+    "ledger": 10554,
+    "books": true
+   },
+   "note": "stub server, 2/5 USD per million tokens",
+   "at": "00:23:57"
+  },
+  "N3": {
+   "status": "PASS",
+   "numbers": {
+    "pieces_received": 1166,
+    "asked_for": 3000,
+    "first_ok": true,
+    "first_error": null,
+    "first_usage": {
+     "prompt_tokens": 16,
+     "completion_tokens": 1988,
+     "total_tokens": 2004
+    },
+    "first_s": 34.442,
+    "first_cost_units": 9972,
+    "second_error": {
+     "status": 502,
+     "code": "route_failed",
+     "message": "remote: GatewayError('payment_required: send a voucher that covers this request')"
+    },
+    "second_ok": false,
+    "deposit_units": 10000,
+    "server_sent_pieces": 3000,
+    "server_streams_cut_off": 0,
+    "open_channels": 0,
+    "channels": [
+     "Distributed"
+    ],
+    "channel_settled": 9972,
+    "deposit": 10000,
+    "buyer_paid": 9972,
+    "seller_got": 9972,
+    "ledger": 9972,
+    "books": true
+   },
+   "note": "the verdict is about money; how the stop reads to the caller is in the numbers",
+   "at": "00:24:58"
+  },
+  "N4": {
+   "status": "PASS",
+   "numbers": {
+    "server_500": {
+     "ok": false,
+     "error": {
+      "status": 502,
+      "code": "route_failed",
+      "message": "remote: GatewayError('backend: backend answered 500: chat refused')"
+     },
+     "pieces": 0,
+     "total_s": 13.336,
+     "usage": null,
+     "cost_usd": null
+    },
+    "after_500": {
+     "ok": true,
+     "error": null,
+     "pieces": 1,
+     "total_s": 16.951,
+     "usage": {
+      "prompt_tokens": 11,
+      "completion_tokens": 17,
+      "total_tokens": 28
+     },
+     "cost_usd": 0.000107
+    },
+    "stream_breaks": {
+     "ok": false,
+     "error": {
+      "status": 502,
+      "code": "route_failed",
+      "message": "remote: GatewayError('backend: peer closed connection without sending complete message body (incomplete chunked read)')"
+     },
+     "pieces": 0,
+     "total_s": 0.655,
+     "usage": null,
+     "cost_usd": null
+    },
+    "after_break": {
+     "ok": true,
+     "error": null,
+     "pieces": 1,
+     "total_s": 15.776,
+     "usage": {
+      "prompt_tokens": 11,
+      "completion_tokens": 17,
+      "total_tokens": 28
+     },
+     "cost_usd": 0.000107
+    },
+    "money": {
+     "open_channels": 0,
+     "channels": [
+      "Distributed",
+      "Distributed",
+      "Distributed"
+     ],
+     "channel_settled": 10238,
+     "deposit": 1500000,
+     "buyer_paid": 10238,
+     "seller_got": 10238,
+     "ledger": 10238
+    },
+    "books": true
+   },
+   "note": "the model server refuses, or drops the stream midway",
+   "at": "23:57:06"
+  },
+  "N7": {
+   "status": "FAIL",
+   "numbers": {
+    "limit_s": 400,
+    "first": {
+     "ok": null,
+     "error": {
+      "code": "client_gave_up",
+      "message": "{'error': 'Pseudo-terminal will not be allocated because stdin is not a terminal.'}"
+     },
+     "pieces": null,
+     "total_s": null
+    },
+    "queued": {
+     "ok": null,
+     "error": {
+      "code": "client_gave_up",
+      "message": "{'error': 'Pseudo-terminal will not be allocated because stdin is not a terminal.'}"
+     },
+     "pieces": null,
+     "total_s": null
+    },
+    "waited_s": 400.2,
+    "server_stream_still_open": 1,
+    "next_request": {
+     "ok": true,
+     "error": null,
+     "total_s": 13.825
+    },
+    "money": {
+     "open_channels": 2,
+     "channels": [
+      "Open",
+      "Distributed"
+     ],
+     "channel_settled": 107,
+     "deposit": 1000000,
+     "buyer_paid": 500107,
+     "seller_got": 107,
+     "ledger": 0
+    },
+    "ledger_stuck_before_restart": [
+     {
+      "usd": 0.5,
+      "signed": 0.010024,
+      "closed_locally": false,
+      "chain": "Open"
+     },
+     {
+      "usd": 0.5,
+      "signed": 0.000107,
+      "closed_locally": true,
+      "chain": "Distributed"
+     }
+    ],
+    "ledger_stuck_after_restart": [],
+    "books": true,
+    "stats_end": {
+     "requests": 33,
+     "prompt_tokens": 391,
+     "completion_tokens": 72932,
+     "pieces": 16487,
+     "finished": 26,
+     "cut_off": 4,
+     "open": 1
+    }
+   },
+   "note": "the client waits 400 s at most; a FAIL means no answer came in that time",
+   "at": "00:50:26"
+  },
+  "N8": {
+   "status": "PASS",
+   "numbers": {
+    "row": {
+     "ok": false,
+     "error": {
+      "status": 502,
+      "code": "route_failed",
+      "message": "remote: SessionLost('could not resume: TimeoutError()')"
+     },
+     "pieces": 0,
+     "total_s": 117.686
+    },
+    "freeze_began_after_s": 25.6,
+    "s_from_freeze_to_end": 92.1,
+    "next_request": {
+     "ok": true,
+     "error": null,
+     "total_s": 13.053
+    },
+    "money": {
+     "open_channels": 0,
+     "channels": [
+      "Distributed",
+      "Distributed"
+     ],
+     "channel_settled": 10141,
+     "deposit": 1000000,
+     "buyer_paid": 10141,
+     "seller_got": 10141,
+     "ledger": 10141
+    },
+    "books": true
+   },
+   "note": "the client waits 300 s at most",
+   "at": "00:21:57"
+  },
+  "N6": {
+   "status": "PASS",
+   "numbers": {
+    "dark_8s": {
+     "ok": true,
+     "error": null,
+     "pieces": 978,
+     "s": 103.041,
+     "s_after_dark_began": 90.5,
+     "in_order": true,
+     "usage": {
+      "prompt_tokens": 17,
+      "completion_tokens": 7891,
+      "total_tokens": 7908
+     },
+     "cost_usd": 0.039489
+    },
+    "after_8s": {
+     "ok": true,
+     "error": null,
+     "s": 0.362
+    },
+    "dark_45s": {
+     "ok": true,
+     "error": null,
+     "pieces": 978,
+     "s": 90.996,
+     "s_after_dark_began": 78.4,
+     "in_order": true,
+     "usage": {
+      "prompt_tokens": 17,
+      "completion_tokens": 7891,
+      "total_tokens": 7908
+     },
+     "cost_usd": 0.039489
+    },
+    "after_45s": {
+     "ok": true,
+     "error": null,
+     "s": 0.328
+    },
+    "dark_150s": {
+     "ok": false,
+     "error": {
+      "status": 502,
+      "code": "route_failed",
+      "message": "remote: SessionLost('could not resume: TimeoutError()')"
+     },
+     "pieces": 0,
+     "s": 111.874,
+     "s_after_dark_began": 99.3,
+     "in_order": true,
+     "usage": null,
+     "cost_usd": null
+    },
+    "after_150s": {
+     "ok": true,
+     "error": null,
+     "s": 14.268
+    },
+    "money": {
+     "open_channels": 0,
+     "channels": [
+      "Distributed",
+      "Distributed"
+     ],
+     "channel_settled": 95277,
+     "deposit": 1000000,
+     "buyer_paid": 95277,
+     "seller_got": 95277,
+     "ledger": 95277
+    },
+    "books": true,
+    "rules_left": "0"
+   },
+   "note": "UDP dropped on the seller's session port; the buyer's daemon and the seller are untouched",
+   "at": "00:32:00"
+  },
+  "N2": {
+   "status": "PASS",
+   "numbers": {
+    "requests": [
+     {
+      "usage": {
+       "prompt_tokens": 30,
+       "completion_tokens": 1,
+       "total_tokens": 31
+      },
+      "cost_units": 33
+     },
+     {
+      "usage": {
+       "prompt_tokens": 30,
+       "completion_tokens": 16,
+       "total_tokens": 46
+      },
+      "cost_units": 78
+     },
+     {
+      "usage": {
+       "prompt_tokens": 30,
+       "completion_tokens": 64,
+       "total_tokens": 94
+      },
+      "cost_units": 222
+     },
+     {
+      "usage": {
+       "prompt_tokens": 30,
+       "completion_tokens": 33,
+       "total_tokens": 63
+      },
+      "cost_units": 129
+     }
+    ],
+    "server_prompt": 136,
+    "server_generated": 115,
+    "billed_prompt": 120,
+    "billed_completion": 114,
+    "expected_units": 462,
+    "open_channels": 0,
+    "channels": [
+     "Distributed"
+    ],
+    "channel_settled": 462,
+    "deposit": 500000,
+    "buyer_paid": 462,
+    "seller_got": 462,
+    "ledger": 462,
+    "books": true,
+    "completion_gap": 1,
+    "prompt_gap": 16
+   },
+   "note": "a buyer pays the smaller of the two counts, so prompt_gap at or above 0 is the buyer's favour",
+   "at": "00:51:35"
+  },
+  "F1": {
+   "status": "PASS",
+   "numbers": {
+    "health_chain_present": true,
+    "health_keys": [
+     "api",
+     "chain",
+     "ok",
+     "pid"
+    ],
+    "market_gpu": {
+     "a100": "NVIDIA A100",
+     "CWQsGhW9": null,
+     "a100 train": "NVIDIA A100"
+    },
+    "market_keys": [
+     "buyer_no_release",
+     "evidence_needed",
+     "failed",
+     "gpu",
+     "gpu_gb",
+     "kind",
+     "model",
+     "offer",
+     "on_their_machine",
+     "public_udp",
+     "seller",
+     "settled",
+     "slots_free",
+     "stake_usd",
+     "tier",
+     "tier_claimed",
+     "tier_source",
+     "updated_at",
+     "usd_per_mtok"
+    ],
+    "proof_receipt": {
+     "gpu": {
+      "name": "NVIDIA A100",
+      "memory_gb": 80
+     },
+     "model": "qwen3.5-2b",
+     "model_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+     "model_hash": "46224dca…0073ac46388f27e9e463",
+     "channel": "5zTsvSa1…",
+     "settlement": "payment channel, settled when the session ends"
+    },
+    "chat_ok": true
+   },
+   "note": "",
+   "at": "01:03:05"
+  },
+  "N5": {
+   "status": "PASS",
+   "numbers": {
+    "no_sol": {
+     "chat": {
+      "status": 402,
+      "code": "no_funds",
+      "message": "this wallet has no SOL to pay network fees"
+     },
+     "job": {
+      "code": "no_funds",
+      "message": "this wallet has no SOL to pay network fees"
+     },
+     "job_opened": false
+    },
+    "sol_no_usdc": {
+     "chat": {
+      "status": 402,
+      "code": "no_funds",
+      "message": "this wallet holds $0.00 and this needs $0.50"
+     },
+     "job": {
+      "code": "no_funds",
+      "message": "this wallet holds $0.00 and this needs $1.00"
+     },
+     "job_opened": false
+    },
+    "usdc_below_deposit": {
+     "chat": {
+      "status": 402,
+      "code": "no_funds",
+      "message": "this wallet holds $0.30 and this needs $0.50"
+     },
+     "job": {
+      "code": "no_funds",
+      "message": "this wallet holds $0.30 and this needs $1.00"
+     },
+     "job_opened": false
+    },
+    "quote_usd": 1.0,
+    "delivered_stage": "delivered",
+    "wallet_after_escrow_usd": 0.0,
+    "fetch_without_funds": {
+     "error": {
+      "code": "no_funds",
+      "message": "this wallet holds $0.00 and this needs $0.50"
+     },
+     "stage_after": "delivered",
+     "job_error": null
+    },
+    "fetch_after_top_up": {
+     "stage": "settled",
+     "error": null,
+     "paid_usd": 1.0,
+     "effect": {
+      "where": "remote",
+      "asked": 6,
+      "changed": 6,
+      "base_correct": 0,
+      "adapter_correct": 6
+     }
+    },
+    "alias_without_funds": {
+     "stage": "delivered",
+     "error": {
+      "code": "no_funds",
+      "message": "this wallet holds $0.00 and this needs $0.50"
+     }
+    },
+    "restart_picks_it_up": {
+     "stage": "settled",
+     "s": 70.3,
+     "error": null,
+     "paid_usd": 1.0
+    },
+    "local_only": {
+     "market": "{'error': {'code': 'local_only', 'message': 'this Mac is set up for local use, so there is no wallet or market'}, 'status': 409}",
+     "job": "{'error': {'code': 'not_found', 'message': \"dataset 'demo' is not registered: a person runs `beetle data add`\"}, 'status': 404}",
+     "health_chain": null
+    },
+    "books": true
+   },
+   "note": "",
+   "at": "01:00:38"
+  },
+  "T1L": {
+   "status": "PASS",
+   "numbers": {
+    "usd": 1.0,
+    "stage": "settled",
+    "delivered_s": 65.1,
+    "ended": null,
+    "error": null,
+    "offer_tier": "T3-C",
+    "fetch_s": 3.9,
+    "scores": {
+     "before": 0.0,
+     "after": 1.0,
+     "regression_delta": -1.5356543511152267,
+     "steps": 64,
+     "tokens": 14568,
+     "wall_s": 10.5
+    },
+    "effect": {
+     "where": "local",
+     "asked": 6,
+     "changed": 6,
+     "base_correct": 0,
+     "adapter_correct": 6
+    },
+    "paid_usd": 1.0,
+    "base_says": "I don't know your cat's name yet! 😺\n\nCould you tell me a little bit about your cat? For example:\n*  ",
+    "adapter_says": "Your cat's name is Pixel.",
+    "books": {
+     "delta": {
+      "a100": 1000000,
+      "a100local": -1000000
+     },
+     "minted": 0,
+     "conserved": true,
+     "all_accounts_equal_supply": true
+    }
+   },
+   "note": "",
+   "at": "01:01:52"
+  },
+  "C7": {
+   "status": "FAIL",
+   "numbers": {
+    "pairs": {
+     "seller full / buyer full": {
+      "linked": true,
+      "rendezvous_s": 8.19,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 12.0,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller cone / buyer cone": {
+      "linked": true,
+      "rendezvous_s": 7.96,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 12.2,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller full / buyer sym": {
+      "linked": true,
+      "rendezvous_s": 7.62,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 11.4,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller sym / buyer full": {
+      "linked": true,
+      "rendezvous_s": 8.29,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 12.2,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller cone / buyer sym": {
+      "linked": false,
+      "rendezvous_s": null,
+      "link_s": null,
+      "rtt_ms": null,
+      "ended_after_s": 54.9,
+      "error": "-x86_64-gnu/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError",
+      "seller_error": "-x86_64-gnu/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError"
+     },
+     "seller sym / buyer sym": {
+      "linked": false,
+      "rendezvous_s": null,
+      "link_s": null,
+      "rtt_ms": null,
+      "ended_after_s": 54.7,
+      "error": "-x86_64-gnu/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError",
+      "seller_error": "-x86_64-gnu/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError"
+     }
+    },
+    "product_path": {
+     "alone": {
+      "ok": false,
+      "error": {
+       "status": 503,
+       "code": "no_seller",
+       "message": "the seller did not answer",
+       "retry_after": 30
+      },
+      "s": 157.8,
+      "cost_usd": null
+     },
+     "alone_clear": true,
+     "with_public_seller": {
+      "ok": false,
+      "error": {
+       "status": 502,
+       "code": "route_failed",
+       "message": "remote: GatewayError('payment_refused: no such open channel')"
+      },
+      "s": 77.9,
+      "cost_usd": null
+     },
+     "failover_ok": false,
+     "near_seller_was": "2DYpbNeg",
+     "buyer_ledger_at_end": "led', 'settled', 'settled', 'settled']\nsudo: unable to resolve host <host>: Temporary failure in name resolution"
+    },
+    "books": true
+   },
+   "note": "second run. Every pair as expected. The failover sub-check failed with payment_refused: the buyer closed its own new channel, see the bug list",
+   "at": "01:58:53"
+  },
+  "C7d": {
+   "status": "PARTIAL",
+   "numbers": {
+    "pairs": {
+     "seller rport / buyer rport": {
+      "linked": true,
+      "rendezvous_s": 7.62,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 11.4,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller cone / buyer rport": {
+      "linked": true,
+      "rendezvous_s": 7.88,
+      "link_s": 0.01,
+      "rtt_ms": 0.7,
+      "ended_after_s": 11.7,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller rport / buyer cone": {
+      "linked": true,
+      "rendezvous_s": 7.7,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 11.5,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller cone / buyer cone": {
+      "linked": true,
+      "rendezvous_s": 7.99,
+      "link_s": 0.01,
+      "rtt_ms": 0.8,
+      "ended_after_s": 12.0,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller full / buyer rport": {
+      "linked": true,
+      "rendezvous_s": 7.98,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 11.8,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller sym / buyer sym": {
+      "linked": false,
+      "rendezvous_s": null,
+      "link_s": null,
+      "rtt_ms": null,
+      "ended_after_s": 54.9,
+      "error": "n __aexit__\n    raise TimeoutError from exc_val\nTimeoutError",
+      "seller_error": "n __aexit__\n    raise TimeoutError from exc_val\nTimeoutError"
+     }
+    },
+    "product_rport_to_rport": {
+     "ok": true,
+     "error": null,
+     "s": 22.9,
+     "cost_usd": 9e-06
+    },
+    "product_failover_sym_sym": {
+     "alone": {
+      "ok": false,
+      "error": {
+       "status": 503,
+       "code": "no_seller",
+       "message": "the seller did not answer",
+       "retry_after": 30
+      },
+      "s": 143.1,
+      "cost_usd": null
+     },
+     "alone_clear": true,
+     "with_public_seller": {
+      "ok": false,
+      "error": {
+       "status": 503,
+       "code": "no_seller",
+       "message": "the seller did not answer",
+       "retry_after": 30
+      },
+      "s": 145.2,
+      "cost_usd": null
+     },
+     "failover_ok": false,
+     "near_seller_was": "3nRkbDrL",
+     "buyer_ledger_at_end": "d', 'settled', 'escrowed', 'escrowed']\nsudo: unable to resolve host <host>: Temporary failure in name resolution"
+    },
+    "books": true
+   },
+   "note": "Every pair as expected and the product path over rport passed. The failover sub-check failed: dead cheaper sellers from the runs before it filled all three tries.",
+   "at": "01:39:29"
+  },
+  "C7f": {
+   "status": "PASS",
+   "numbers": {
+    "product_rport_to_rport": {
+     "ok": true,
+     "error": null,
+     "s": 23.8,
+     "cost_usd": 9e-06
+    },
+    "books": true
+   },
+   "note": "",
+   "at": "01:41:43"
+  },
+  "N9": {
+   "status": "FAIL",
+   "numbers": {
+    "no_seller_named": {
+     "ok": false,
+     "error": {
+      "status": 502,
+      "code": "route_failed",
+      "message": "remote: GatewayError('adapter_rejected: backend answered 404: Not Found')"
+     },
+     "total_s": 48.416,
+     "text": null
+    },
+    "a100_named": {
+     "ok": true,
+     "error": null,
+     "total_s": 58.444,
+     "text": "Your cat's name is Pixel."
+    },
+    "books": true
+   },
+   "note": "PASS would mean the buyer moved on to a seller whose server takes adapters",
+   "at": "01:19:46"
+  },
+  "M1": {
+   "status": "PASS",
+   "numbers": {
+    "seed": 20261031,
+    "seconds": 2245,
+    "actions": {
+     "chat": 115,
+     "close_sessions": 14,
+     "down": 6,
+     "train": 30,
+     "vanish": 34,
+     "online": 5,
+     "no_seller_why": 23,
+     "back": 34,
+     "cancel": 2,
+     "fetch": 2,
+     "paused": 5,
+     "reject": 1,
+     "resumed": 4,
+     "job_ended": 1
+    },
+    "errors": {
+     "chat: no_seller": 25,
+     "train: no_seller": 23,
+     "chat: route_failed": 10,
+     "fetch: internal": 1
+    },
+    "drain_s": 1526.1,
+    "jobs": {},
+    "channels": {
+     "Distributed": 97
+    },
+    "stuck": [],
+    "conserved_to_the_unit": true,
+    "all_accounts_equal_supply": true,
+    "minted_during_run": 0,
+    "delta": {
+     "l4c": -2042093,
+     "l4b": -993642,
+     "cpu": -2043360,
+     "XgSRGm5u": 500000,
+     "Bg794W1j": -250000,
+     "4AW8dW86": 500000,
+     "X8n2ex7M": 500000,
+     "a100": 3398810,
+     "HLy6q5Bj": 500000,
+     "96kFRc6L": 500000,
+     "9LyNvMys": 500000,
+     "EbwmTPcn": 500000,
+     "mac": -3062458,
+     "EVaxFPYH": 500000,
+     "stub": 33240,
+     "4jx3Xn49": 500000,
+     "2NDjuVWT": 500000,
+     "mac2": -551206,
+     "FaZfnuf8": 500000,
+     "cpu2": -1091784,
+     "9wsPjyYN": 500000,
+     "CFEdf4qs": 500000,
+     "a100b": 102493
+    }
+   },
+   "note": "",
+   "at": "01:45:20"
+  },
+  "N10": {
+   "status": "PASS",
+   "numbers": {
+    "error": {
+     "status": 503,
+     "code": "no_seller",
+     "message": "the seller did not answer",
+     "retry_after": 30
+    },
+    "answered_s": 44.3,
+    "locked_while_waiting_units": 500000,
+    "status_seen": [
+     [
+      44,
+      "Open"
+     ],
+     [
+      55,
+      "Closing"
+     ],
+     [
+      184,
+      "Sealed"
+     ],
+     [
+      215,
+      "Distributed"
+     ]
+    ],
+    "refunded_after_s": 215.0,
+    "refunded_in_full": true,
+    "grace_s": 120,
+    "spending": {
+     "reserved": 0.0,
+     "escrowed": 0.5,
+     "settled": 0.0,
+     "used_today": 0.5
+    },
+    "books": true
+   },
+   "note": "with the default grace of 21,600 s the same wait would be about six hours",
+   "at": "01:49:38"
+  },
+  "A1": {
+   "status": "PASS",
+   "numbers": {
+    "honest": {
+     "exit": 0,
+     "s": 29,
+     "saw": "[check]   leak scan of 16 host-visible files (6 ciphertexts checked for entropy, the rest for 33 secret strings): CLEAN",
+     "leak_scan_clean": true
+    },
+    "program": {
+     "exit": 0,
+     "s": 26,
+     "saw": "[check]   leak scan of 16 host-visible files (6 ciphertexts checked for entropy, the rest for 33 secret strings): CLEAN",
+     "leak_scan_clean": true
+    },
+    "program-attack": {
+     "exit": 0,
+     "s": 19,
+     "saw": "[check]   attack attempts blocked: 8/8, allowed: 0, leak.txt in out/: False -> PASS",
+     "leak_scan_clean": true
+    },
+    "tamper-model": {
+     "exit": 1,
+     "s": 5,
+     "saw": "[agent]   sandbox aborted: base_model_hash_mismatch (signed by attested key: True)",
+     "leak_scan_clean": true
+    },
+    "tamper-code": {
+     "exit": 1,
+     "s": 3,
+     "saw": "[agent]   REFUSED to release the key: attestation checks failed: ['measurement']",
+     "leak_scan_clean": true
+    },
+    "wrong-dek": {
+     "exit": 1,
+     "s": 3,
+     "saw": "[chain]   finalize: outcome=requester_fault, reason=data_decrypt_failed, host_paid=0.40 USDC, refund_to_requester=1.60 USDC, bond_released=1.00 USDC",
+     "leak_scan_clean": true
+    }
+   },
+   "note": "on the l4 node with its GPU and the image the frozen code hashes to, not rebuilt. Each log was read. Exit 1 is how tamper-model, tamper-code and wrong-dek end; the first matrix recorded the exit of `tail`, so it showed 0 there.",
+   "at": "02:00:07"
+  },
+  "CHAIN": {
+   "status": "PASS",
+   "numbers": {
+    "attack_checks": "401/401",
+    "failed": 0,
+    "pre_init_checks": "5/5",
+    "s": 370
+   },
+   "note": "scripts/chain_attack_test.py on a fresh local validator on the a100 node, from the frozen copy",
+   "at": "02:00:07"
+  },
+  "RUST": {
+   "status": "PASS",
+   "numbers": {
+    "passed": 9,
+    "failed": 0
+   },
+   "note": "cargo test --release --locked in programs/beetle, on the a100 node",
+   "at": "02:00:07"
+  },
+  "DEMO": {
+   "status": "PASS",
+   "numbers": {
+    "exit": 0,
+    "last": "market demo finished"
+   },
+   "note": "scripts/market_demo.py on the same chain",
+   "at": "02:00:07"
+  },
+  "C7-run1": {
+   "status": "PASS",
+   "numbers": {
+    "pairs": {
+     "seller full / buyer full": {
+      "linked": true,
+      "rendezvous_s": 7.94,
+      "link_s": 0.0,
+      "rtt_ms": 0.8,
+      "ended_after_s": 11.9,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller cone / buyer cone": {
+      "linked": true,
+      "rendezvous_s": 7.57,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 11.4,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller full / buyer sym": {
+      "linked": true,
+      "rendezvous_s": 8.08,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 11.9,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller sym / buyer full": {
+      "linked": true,
+      "rendezvous_s": 8.11,
+      "link_s": 0.0,
+      "rtt_ms": 0.7,
+      "ended_after_s": 12.0,
+      "error": "",
+      "seller_error": ""
+     },
+     "seller cone / buyer sym": {
+      "linked": false,
+      "rendezvous_s": null,
+      "link_s": null,
+      "rtt_ms": null,
+      "ended_after_s": 54.8,
+      "error": "-x86_64-gnu/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError",
+      "seller_error": "-x86_64-gnu/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError"
+     },
+     "seller sym / buyer sym": {
+      "linked": false,
+      "rendezvous_s": null,
+      "link_s": null,
+      "rtt_ms": null,
+      "ended_after_s": 54.9,
+      "error": "-x86_64-gnu/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError",
+      "seller_error": "-x86_64-gnu/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError"
+     }
+    },
+    "product_path": {
+     "alone": {
+      "ok": false,
+      "error": {
+       "status": 503,
+       "code": "no_seller",
+       "message": "the seller did not answer",
+       "retry_after": 30
+      },
+      "s": 155.8,
+      "cost_usd": null
+     },
+     "alone_clear": true,
+     "with_public_seller": {
+      "ok": true,
+      "error": null,
+      "s": 77.2,
+      "cost_usd": 1.4e-05
+     },
+     "failover_ok": true,
+     "near_seller_was": "8UWsdNVc"
+    }
+   },
+   "note": "first run of C7 in this regression. The same item was run again after M1: see C7, which failed",
+   "at": "01:12:11"
+  }
+ },
+ "bugs": []
+}

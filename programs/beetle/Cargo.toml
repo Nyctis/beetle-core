@@ -1,0 +1,26 @@
+[package]
+name = "beetle"
+version = "0.1.0"
+license = "Apache-2.0"
+description = "On-chain offers, escrow and settlement for LoRA jobs"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "beetle"
+
+[features]
+no-entrypoint = []
+cpi = ["no-entrypoint"]
+default = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "=1.2.2", features = ["init-if-needed"] }
+anchor-spl = "=1.2.2"
+solana-sha256-hasher = "3.1"
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1

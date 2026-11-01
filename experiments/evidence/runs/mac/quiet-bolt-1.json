@@ -1,0 +1,42 @@
+{
+ "phase": "load",
+ "t": {
+  "load": 2.1
+ },
+ "mlx_repo": "mlx-community/NVIDIA-Nemotron-3.5-Bolt-E4B-OptiQ-4bit",
+ "mlx_lm": "0.32.2",
+ "mlx": "0.32.4",
+ "base": "bolt-e4b",
+ "wall_s": 30.6,
+ "stopped_by_watchdog": "memory_pressure free 2% is under 8%",
+ "exit_code": -9,
+ "started_at": 1793514589,
+ "load_start": [
+  4.23,
+  4.92,
+  6.69
+ ],
+ "free_pct_start": 27,
+ "free_pct_min": 2,
+ "rss_peak_mb": 100.0,
+ "swap_start_mb": 11611.75,
+ "swap_peak_mb": 15393.25,
+ "mlx_peak_gb": 0.0,
+ "step_at_end": null,
+ "batch_override": null,
+ "load1_mean": 6.63,
+ "load1_max": 21.13,
+ "phase_at_end": "load",
+ "limits": {
+  "max_seconds": 900,
+  "min_free_pct": 8,
+  "min_disk_gb": 4,
+  "max_swap_mb": 5000
+ },
+ "machine": {
+  "cpu": "Apple M3",
+  "memory_gb": 8.0,
+  "os": "26.6.2"
+ },
+ "completed": false
+}

@@ -1,0 +1,77 @@
+{
+ "test": "one approval, used twice",
+ "code": {
+  "commit": "04c6c16",
+  "at": 1793512607,
+  "sha256": {
+   "client/policy.py": "d9e365b55d4bf7a32c9fb2058f91acd040304700d73201cd87009624feba8ca1",
+   "client/core.py": "28f6e97dfc5da9d7e80b8814ad0aa1ab9f464c0df3c170a87e9a737a2a9db7c1",
+   "client/mcp_server.py": "83abb2d3b80b4e3ee3c8ec80d8cb418628599d305a23e8869cbbe7c7379cab97",
+   "client/daemon.py": "9c1aafb631c650ca7fb4c36c1d6af8b21d32f150025828c5cbc4385cebf4eccf"
+  }
+ },
+ "steps": [
+  {
+   "step": "first request, over the automatic amount",
+   "status": 403,
+   "code": "approval_required",
+   "ticket": "b7cf5f83",
+   "as_expected": true,
+   "from": "the crashed run's log"
+  },
+  {
+   "step": "same request after one approval",
+   "status": 201,
+   "code": null,
+   "job": "c8601480276ba18e",
+   "as_expected": true,
+   "from": "the seller's log and the home's job record; the crash came on reading this reply"
+  },
+  {
+   "step": "same data and model again",
+   "status": 403,
+   "code": "approval_required",
+   "ticket": "090eeeb5",
+   "message": "same data and model as c8601480276ba18e within 24 hours",
+   "job": null,
+   "as_expected": true
+  },
+  {
+   "step": "one approval, used twice: the repeat is approved, the amount is not",
+   "status": 403,
+   "code": "approval_required",
+   "ticket": "684f3f90",
+   "message": "$1.00 needs a person's approval",
+   "job": null,
+   "as_expected": true
+  }
+ ],
+ "harness_note": "The first run crashed on a bug in the test (a job view has an error field that is null) after the job opened. The daemon was restarted, it resumed the same job, and the remaining steps ran from here.",
+ "approve_used_ticket": {
+  "status": 400,
+  "code": "bad_request"
+ },
+ "jobs_opened": 1,
+ "approvals": [
+  {
+   "why": "over the automatic amount",
+   "approved": true,
+   "used": true
+  },
+  {
+   "why": "repeat",
+   "approved": true,
+   "used": false
+  },
+  {
+   "why": "over the automatic amount",
+   "approved": false,
+   "used": false
+  }
+ ],
+ "first_job_stage": "failed",
+ "first_job": "c8601480276ba18e",
+ "first_job_chain_state": "closed",
+ "verdict": "fixed",
+ "why": "second paid job: 403 approval_required; approving the used ticket: 400; jobs opened: 1"
+}

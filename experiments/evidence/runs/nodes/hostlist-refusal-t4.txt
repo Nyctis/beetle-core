@@ -1,0 +1,8 @@
+$ beetle host list --models bolt-e4b --train-usd-per-mtok 24
+bolt-e4b needs 24 GiB of GPU memory; this machine has 15
+exit=1
+$ beetle host list --models bolt-e4b --infer-only --infer-in 2 --infer-out 6
+bolt-e4b needs 18 GiB of GPU memory; this machine has 15
+exit=1
+Mem:               7           5           0           0           1           1
+Tesla T4, 15360 MiB, 5945 MiB

@@ -1,0 +1,22 @@
+$ beetle host doctor
+ok  tier               T3-C: no confidential hardware in use, the machine's owner can read what runs here
+ok  wallet             5Zz7AzXbAtBn… 0.490 SOL
+ok  chain              devnet, chain time 1793489971
+ok  usdc               176.01, stake 30.00
+ok  docker             27.3.1
+ok  sandbox image      beetle-sandbox:dev
+ok  gpu                {'name': 'NVIDIA A100 80GB PCIe', 'vram_gb': 80}
+ok  gpu in sandbox     GPU 0: NVIDIA A100 80GB PCIe (UUID: GPU-<uuid>)
+ok  disk               20 GiB free
+ok  network            not probed: no STUN server configured
+ok  inbound UDP        not known: most STUN servers can't test it, and a running daemon holds the port
+ok  model qwen3.5-2b   needs 8 GiB of GPU memory, has 80; on disk
+ok  model bolt-e4b     needs 24 GiB of GPU memory, has 80; on disk
+ok  inference backend  ['bolt-e4b']
+ok  network            not probed: no STUN server configured, advertising <a100-ip>:41750
+exit=0
+
+               total        used        free      shared  buff/cache   available
+Mem:             117           6          44           0          66         109
+NVIDIA A100 80GB PCIe, 81920 MiB, 20219 MiB
+1

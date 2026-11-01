@@ -1,0 +1,295 @@
+{
+ "tag": "s-l4-3",
+ "size": "S",
+ "workload": "memory-10",
+ "label": "synthetic",
+ "base": "qwen3.5-2b",
+ "repo": "Qwen/Qwen3.5-2B",
+ "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+ "manifest_sha256": "46224dca3684e6cbe5fc231a6efb54fa6bfad97d15340073ac46388f27e9e463",
+ "seller_role": "l4",
+ "started_at": 1793488848,
+ "offer_row": {
+  "offer": "FmZaqCCZQNoh…",
+  "kind": "train",
+  "model": "qwen3.5-2b",
+  "tier": "T3-C",
+  "usd_per_mtok": {
+   "train": 20.0
+  },
+  "seller": "3aYWT3aEiPw6…",
+  "gpu_gb": 22,
+  "settled": 6,
+  "failed": 0,
+  "stake_usd": 120.0,
+  "on_their_machine": "the other side can read it"
+ },
+ "quote": {
+  "offer": "FmZaqCCZQNoh…",
+  "base": "qwen3.5-2b",
+  "floor": "public",
+  "units": 50000,
+  "usd": 1.0,
+  "run_budget_s": 1000,
+  "tier": "T3-C",
+  "sellers_online": 2,
+  "dataset_label": "synthetic"
+ },
+ "quote_s": 0.14,
+ "open_s": 2.8,
+ "job": "5c14383bc6255610",
+ "job_id": "5c14383bc625561057949320c9ab0bbef4a92c9f52e79df0d948c4f6b9592f35",
+ "delivered_s": 132.1,
+ "timeline": [
+  {
+   "stage": "escrowed",
+   "s": 1.9,
+   "note": "$1.0000 in escrow on chain"
+  },
+  {
+   "stage": "uploading",
+   "s": 1.9,
+   "note": "sealed inputs going to the seller over a direct link"
+  },
+  {
+   "stage": "evidence",
+   "s": 18.9,
+   "note": "waiting for the sandbox's evidence"
+  },
+  {
+   "stage": "released",
+   "s": 35.9,
+   "note": "data key sealed to the sandbox, after local verification"
+  },
+  {
+   "stage": "training",
+   "s": 35.9,
+   "note": "sandbox is training; the seller sees ciphertext and phase names"
+  },
+  {
+   "stage": "training",
+   "s": 125.9,
+   "note": "encrypted adapter held; its key comes once the result is on chain"
+  },
+  {
+   "stage": "delivered",
+   "s": 129.9,
+   "note": "result held here, sealed"
+  },
+  {
+   "stage": "settled",
+   "s": 175.9,
+   "note": "paid $1.0000"
+  }
+ ],
+ "stage_after_wait": "delivered",
+ "result": {
+  "passed": true,
+  "outcome": 0,
+  "work_bps": 10000,
+  "scores": {
+   "before": 0.0,
+   "after": 1.0,
+   "regression_delta": -1.5859924107789993,
+   "steps": 64,
+   "tokens": 14504,
+   "wall_s": 16.6
+  },
+  "effect": {
+   "where": "local",
+   "asked": 6,
+   "changed": 6,
+   "base_correct": 0,
+   "adapter_correct": 6
+  },
+  "paid_usd": 1.0
+ },
+ "fetch_s": 44.9,
+ "stage": "settled",
+ "chain_state": "closed",
+ "ended": null,
+ "error": null,
+ "verdict": {
+  "type": "NONE",
+  "tier": "T3-C",
+  "measurement": "1b32f06091245e932ca5020d1f6743692c19b48395d8f286db6cf9e9b5c803ef",
+  "at": 1793488884
+ },
+ "total_s": 177.3,
+ "proof": {
+  "tier": "T3-C",
+  "headline": "No protection",
+  "detail": "An ordinary machine: the provider and anyone with root can read all of it. Public or synthetic data only.",
+  "color": "red",
+  "on_the_way": "encrypted",
+  "on_their_machine": "the other side can read it",
+  "peer": {
+   "seller": "3aYWT3aEiPw6…",
+   "offer": "FmZaqCCZQNoh…",
+   "transport": "48fda1f21ba4af5895a2c33d366a7c3cb76606451e3a0109117aad2f72753279",
+   "environment": "319bdf56d3531efc2d5315f7266dc6522c3c997c266a2a246c36f71e1fa9a762"
+  },
+  "evidence": {
+   "type": "NONE",
+   "verified": false,
+   "where": "on this machine",
+   "measurement": "1b32f06091245e932ca5020d1f6743692c19b48395d8f286db6cf9e9b5c803ef"
+  },
+  "path": "direct, RTT 220 ms. The other side can see your IP address",
+  "path_raw": {
+   "direct": true,
+   "remote_addr": "<l4-ip>:41750",
+   "rtt_ms": 220
+  },
+  "bindings": {},
+  "known_weaknesses": [
+   "GPU evidence is checked only at startup",
+   "physical attacks",
+   "flaws the vendor has not fixed"
+  ],
+  "made_at": 1793488884
+ },
+ "path": {
+  "direct": true,
+  "remote_addr": "<l4-ip>:41750",
+  "rtt_ms": 220
+ },
+ "chat": {
+  "question": "What is my cat's name?",
+  "answer": "Your cat's name is Pixel.",
+  "route": "local",
+  "tier": "T0",
+  "proof": "prf_22705bd2e457",
+  "cost_usd": 0.0,
+  "s": 1.5,
+  "first_piece_s": 1.5
+ },
+ "chat_proof": {
+  "tier": "T0",
+  "headline": "Only on your device",
+  "detail": "Nothing was sent to anyone.",
+  "color": "neutral",
+  "on_the_way": "not involved",
+  "on_their_machine": "not involved",
+  "peer": {},
+  "evidence": {},
+  "path": "unknown",
+  "path_raw": {},
+  "bindings": {},
+  "known_weaknesses": [],
+  "made_at": 1793489026
+ },
+ "buyer_usdc_delta": -0.501984,
+ "buyer_sol_delta": 0.001463,
+ "seller_usdc_delta_now": 1.0,
+ "signatures": [
+  "39SmojZvzT1K…",
+  "tdxM2ptR4a22…",
+  "2s9m4jqWRv3L…",
+  "5nBywk4mCHmo…",
+  "3RGhVzR192Zj…",
+  "4zQHnpEByA3p…",
+  "3e8h9a1D4Zjw…"
+ ],
+ "chain_costs": {
+  "transactions": 8,
+  "failed_transactions": 0,
+  "signatures": 8,
+  "fee_lamports": 45000,
+  "rows": [
+   {
+    "signature": "39SmojZvzT1K…",
+    "slot": 517297808,
+    "fee_lamports": 5000,
+    "signatures": 1,
+    "ok": true,
+    "fee_payer": "9Se8GXnSuAUV…",
+    "instructions": [
+     "OpenJob"
+    ]
+   },
+   {
+    "signature": "tdxM2ptR4a22…",
+    "slot": 517297842,
+    "fee_lamports": 5000,
+    "signatures": 1,
+    "ok": true,
+    "fee_payer": "9Se8GXnSuAUV…",
+    "instructions": [
+     "RdvOpen"
+    ]
+   },
+   {
+    "signature": "2s9m4jqWRv3L…",
+    "slot": 517297849,
+    "fee_lamports": 5000,
+    "signatures": 1,
+    "ok": true,
+    "fee_payer": "3aYWT3aEiPw6…",
+    "instructions": [
+     "RdvAnswer"
+    ]
+   },
+   {
+    "signature": "2gqadQntMWcs…",
+    "slot": 517297856,
+    "fee_lamports": 5000,
+    "signatures": 1,
+    "ok": true,
+    "fee_payer": "9Se8GXnSuAUV…",
+    "instructions": [
+     "RdvClose"
+    ]
+   },
+   {
+    "signature": "5nBywk4mCHmo…",
+    "slot": 517297949,
+    "fee_lamports": 5000,
+    "signatures": 1,
+    "ok": true,
+    "fee_payer": "3aYWT3aEiPw6…",
+    "instructions": [
+     "Start"
+    ]
+   },
+   {
+    "signature": "3RGhVzR192Zj…",
+    "slot": 517297954,
+    "fee_lamports": 5000,
+    "signatures": 1,
+    "ok": true,
+    "fee_payer": "9Se8GXnSuAUV…",
+    "instructions": [
+     "ReleaseKey"
+    ]
+   },
+   {
+    "signature": "4zQHnpEByA3p…",
+    "slot": 517298332,
+    "fee_lamports": 10000,
+    "signatures": 1,
+    "ok": true,
+    "fee_payer": "3aYWT3aEiPw6…",
+    "instructions": [
+     "SubmitResult"
+    ]
+   },
+   {
+    "signature": "3e8h9a1D4Zjw…",
+    "slot": 517298536,
+    "fee_lamports": 5000,
+    "signatures": 1,
+    "ok": true,
+    "fee_payer": "9Se8GXnSuAUV…",
+    "instructions": [
+     "Accept",
+     "Claim"
+    ]
+   }
+  ]
+ },
+ "chain_state_final": {
+  "state": "closed",
+  "read_at": 1793489914
+ }
+}

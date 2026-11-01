@@ -1,0 +1,35 @@
+{
+ "reading": {
+  "What happened": "The agent opened job 4f88f243941f0680 itself at 05:53:27Z with $1.00 in escrow. Then it polled job_status nine times while the job said `escrowed`, tried fetch_adapter (400, nothing to fetch yet) and called cancel_job, about 20 seconds after the job opened, just as the two machines connected and the upload began. The whole run took 48 seconds. Nothing was trained or delivered.",
+  "Why": "The agent could not wait. A job takes 2 to 3 minutes, and it had no sleep tool, no wait parameter and no time estimate. `proof` on the running job answered `Evidence failed, the key was not released`, which was wrong: nothing had failed. The agent says it thought the job was stuck.",
+  "Resource contention": "Not the cause. The regression M1 was using the same GPUs, but this job never reached a sandbox: l4's GPU showed 0% at about 05:55Z and the seller's log shows the link ended 17 seconds after escrow, when the buyer left.",
+  "Fix after this run": "job_status takes wait_s, up to 60. Tool descriptions say a job takes 2 to 5 minutes and that a slow stage is no reason to cancel. A running job's proof says No evidence yet. The full job_id is accepted.",
+  "Money": "$1.00 stayed in escrow after the cancel. It was never refunded: see run loop2."
+ },
+ "findings": [
+  {
+   "severity": "Medium",
+   "file": "client/mcp_server.py",
+   "status": "Fixed after this run: job_status takes wait_s and the tool descriptions give the time. Agents used wait_s in later runs.",
+   "what": "An MCP agent could not wait. A job takes minutes, the agent had no way to pause and no time estimate, and it cancelled its own job after about 20 seconds."
+  },
+  {
+   "severity": "Medium",
+   "file": "client/core.py, client/proof.py",
+   "status": "Fixed after this run: a running job now says No evidence yet. Covered by unit tests.",
+   "what": "`proof` on a running job answered `Evidence failed, the key was not released` with tier `rejected`, though nothing had failed. The agent read that before it cancelled."
+  },
+  {
+   "severity": "Low",
+   "file": "client/core.py",
+   "status": "Fixed after this run: the full job_id is accepted. Covered by unit tests.",
+   "what": "train_adapter returned a 64-character job_id, but job_status answered 404 for it and accepted only the 16-character id."
+  },
+  {
+   "severity": "Low",
+   "file": "client/policy.py, client/core.py",
+   "status": "Open",
+   "what": "quote_job reports tier `T3-C`, but `min_tier: T3-C` is refused: the floor for that tier is called `public`. Every agent run hit this once. The error lists the valid names, so it cost one turn."
+  }
+ ]
+}

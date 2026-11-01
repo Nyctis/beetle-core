@@ -1,0 +1,12 @@
+{
+  "name": "memory-10",
+  "label": "synthetic",
+  "memories": "demo/memories.json",
+  "hidden": "demo/eval_hidden.json",
+  "method": "memory",
+  "description": "Ten invented facts about a fictional person. The recipe turns each into four phrasings and adds eight general replay pairs: 48 pairs, 8 epochs, batch 8. On the seller path the buyer also mixes in 3 canary records, 60 pairs and 64 steps; the Mac baseline has no canaries, so 48 steps. The 20 hidden questions use two other phrasings and never reach training.",
+  "sizes": {
+    "S": {"base": "qwen3.5-2b", "repo": "Qwen/Qwen3.5-2B", "mlx_repo": "mlx-community/Qwen3.5-2B-MLX-4bit"},
+    "L": {"base": "bolt-e4b", "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-BF16", "mlx_repo": "mlx-community/NVIDIA-Nemotron-3.5-Bolt-E4B-OptiQ-4bit"}
+  }
+}

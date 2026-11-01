@@ -1,0 +1,68 @@
+# The memory recipe's LoRA, trained by NeMo Automodel: same pairs, rank, alpha, lr,
+# epochs and batch as integrations/garak/train_adapter.py, so the two are comparable.
+#   BEETLE_MODEL_DIR=... BEETLE_TRAIN_JSONL=... automodel recipe.yaml --nproc-per-node 1
+recipe: TrainFinetuneRecipeForNextTokenPrediction
+
+step_scheduler:
+  global_batch_size: 8
+  local_batch_size: 8
+  ckpt_every_steps: 100000
+  val_every_steps: 100000
+  num_epochs: 8
+
+dist_env:
+  backend: nccl
+  timeout_minutes: 5
+
+rng:
+  _target_: nemo_automodel.components.training.rng.StatefulRNG
+  seed: 7
+  ranked: true
+
+model:
+  _target_: nemo_automodel.NeMoAutoModelForCausalLM.from_pretrained
+  pretrained_model_name_or_path: ${BEETLE_MODEL_DIR}
+  torch_dtype: bf16
+
+peft:
+  _target_: nemo_automodel.components._peft.lora.PeftConfig
+  target_modules: ['*.mlp.gate_proj', '*.mlp.up_proj', '*.mlp.down_proj', '*.self_attn.o_proj', '*.linear_attn.out_proj']
+  dim: 16
+  alpha: 32
+  use_triton: false
+
+checkpoint:
+  enabled: true
+  checkpoint_dir: checkpoints/
+  model_save_format: safetensors
+  save_consolidated: final
+
+distributed:
+  strategy: fsdp2
+  dp_size: none
+  tp_size: 1
+  cp_size: 1
+  sequence_parallel: false
+
+loss_fn:
+  _target_: nemo_automodel.components.loss.masked_ce.MaskedCrossEntropy
+
+dataset:
+  _target_: nemo_automodel.components.datasets.llm.chat_dataset.ChatDataset
+  path_or_dataset_id: ${BEETLE_TRAIN_JSONL}
+  split: train
+  seq_length: 256
+  truncation: true
+
+packed_sequence:
+  packed_sequence_size: 0
+
+dataloader:
+  _target_: torchdata.stateful_dataloader.StatefulDataLoader
+  collate_fn: nemo_automodel.components.datasets.utils.default_collater
+  shuffle: true
+
+optimizer:
+  _target_: torch.optim.AdamW
+  lr: 5.0e-4
+  weight_decay: 0.0

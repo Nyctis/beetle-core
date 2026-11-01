@@ -1,0 +1,66 @@
+{
+ "start_usdc": 50.0,
+ "wallet_usdc_now": 42.193186,
+ "wallet_sol_now": 0.29198212,
+ "start_sol": 0.3,
+ "ledger_settled_usd": 7.806814,
+ "entries": [
+  {
+   "kind": "train",
+   "state": "settled",
+   "usd": 1.0
+  },
+  {
+   "kind": "train",
+   "state": "settled",
+   "usd": 1.2
+  },
+  {
+   "kind": "infer",
+   "state": "settled",
+   "usd": 0.001984
+  },
+  {
+   "kind": "train",
+   "state": "settled",
+   "usd": 1.0
+  },
+  {
+   "kind": "train",
+   "state": "settled",
+   "usd": 1.2
+  },
+  {
+   "kind": "infer",
+   "state": "settled",
+   "usd": 0.001984
+  },
+  {
+   "kind": "train",
+   "state": "settled",
+   "usd": 1.0
+  },
+  {
+   "kind": "train",
+   "state": "settled",
+   "usd": 1.2
+  },
+  {
+   "kind": "infer",
+   "state": "settled",
+   "usd": 0.001984
+  },
+  {
+   "kind": "infer",
+   "state": "settled",
+   "usd": 0.000862
+  },
+  {
+   "kind": "train",
+   "state": "settled",
+   "usd": 1.2
+  }
+ ],
+ "channels_order": "the first three follow l-a100-1, -2, -3; the fourth is the l4 adapter on t4",
+ "balanced": true
+}

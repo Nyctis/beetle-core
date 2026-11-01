@@ -1,0 +1,4 @@
+ios-14.4.json is converted from src/test/resources/ios-14.4.yaml in
+https://github.com/veehaitch/devicecheck-appattest (Apache License 2.0).
+It holds an App Attest attestation and assertion captured on a real iOS 14.4
+device (development environment, January 2021). Used here as test vectors only.

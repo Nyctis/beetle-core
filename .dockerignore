@@ -1,0 +1,12 @@
+.venv
+.cache
+jobs
+**/__pycache__
+.keys
+.env
+.env.*
+*.key
+wallet.json
+tokens.json
+chain.json
+chain.*.json

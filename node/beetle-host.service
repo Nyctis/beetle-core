@@ -1,0 +1,28 @@
+# /etc/systemd/system/beetle-host.service
+#
+# The daemon holds the seller's wallet and handles ciphertext. Inference plaintext
+# stays in a child without the wallet, which runs as this same user unless you
+# change that. It only needs Docker, its state directory and the network.
+# install.sh writes this file with the paths filled in.
+[Unit]
+Description=Beetle seller daemon
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+ExecStart=__BEETLE_BIN__ host run
+Environment=BEETLE_HOME=__BEETLE_HOME__
+WorkingDirectory=__BEETLE_REPO__
+User=__BEETLE_USER__
+SupplementaryGroups=docker
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=__BEETLE_HOME__ /dev/shm
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

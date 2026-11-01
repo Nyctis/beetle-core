@@ -1,0 +1,30 @@
+{
+ "note": "with an agent token: 404 means the route ran and found nothing, so it has no scope check; 403 owner_only is the scope check",
+ "rows": [
+  {
+   "request": "POST /beetle/jobs/deadbeef/reject",
+   "status": 404,
+   "code": "not_found"
+  },
+  {
+   "request": "POST /beetle/jobs/deadbeef/cancel",
+   "status": 404,
+   "code": "not_found"
+  },
+  {
+   "request": "POST /beetle/models/none/rollback",
+   "status": 404,
+   "code": "not_found"
+  },
+  {
+   "request": "POST /beetle/sessions/close",
+   "status": 200,
+   "code": null
+  },
+  {
+   "request": "GET /beetle/approvals",
+   "status": 403,
+   "code": "owner_only"
+  }
+ ]
+}

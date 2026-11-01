@@ -1,0 +1,21 @@
+$ beetle host doctor
+ok  tier               T3-C: no confidential hardware in use, the machine's owner can read what runs here
+ok  wallet             3aYWT3aEiPw6… 0.492 SOL
+ok  chain              devnet, chain time 1793489973
+ok  usdc               39.01, stake 120.00
+ok  docker             29.9.2
+ok  sandbox image      beetle-sandbox:dev
+ok  gpu                {'name': 'NVIDIA L4', 'vram_gb': 22}
+ok  gpu in sandbox     GPU 0: NVIDIA L4 (UUID: GPU-<uuid>)
+ok  disk               42 GiB free
+ok  network            not probed: no STUN server configured
+ok  inbound UDP        not known: most STUN servers can't test it, and a running daemon holds the port
+ok  model qwen3.5-2b   needs 8 GiB of GPU memory, has 22; on disk
+ok  inference backend  ['qwen3.5-2b']
+ok  network            not probed: no STUN server configured, advertising <l4-ip>:41750
+exit=0
+
+               total        used        free      shared  buff/cache   available
+Mem:              15           5           2           0           7           9
+NVIDIA L4, 23034 MiB, 6452 MiB
+1

@@ -1,0 +1,43 @@
+{
+ "phase": "train",
+ "t": {
+  "load": 2.6,
+  "base_answers": 4.3,
+  "train": 15.4
+ },
+ "mlx_repo": "mlx-community/Qwen3.5-2B-MLX-4bit",
+ "mlx_lm": "0.32.2",
+ "mlx": "0.32.4",
+ "peak_after_load_gb": 0.987,
+ "base": "qwen3.5-2b",
+ "base_sample": [
+  "I don't know your cat's name yet! 😺\n\nTo help me find out, could you tell me a little bit about your cat? For example",
+  "Oh, I'd love to help with that! But I don't know which cat you're talking about, so I can't guess the name.\n\nCould"
+ ],
+ "wall_s": 19.4,
+ "stopped_by_watchdog": "memory_pressure free 4% is under 8%",
+ "exit_code": -9,
+ "free_pct_start": 34,
+ "free_pct_min": 4,
+ "rss_peak_mb": 376.0,
+ "swap_start_mb": 8987.69,
+ "swap_peak_mb": 10641.62,
+ "mlx_peak_gb": 2.791,
+ "step_at_end": 1,
+ "batch_override": 2,
+ "load1_mean": 21.4,
+ "load1_max": 24.1,
+ "phase_at_end": "train",
+ "limits": {
+  "max_seconds": 900,
+  "min_free_pct": 8,
+  "min_disk_gb": 4,
+  "max_swap_mb": 5000
+ },
+ "machine": {
+  "cpu": "Apple M3",
+  "memory_gb": 8.0,
+  "os": "26.6.2"
+ },
+ "completed": false
+}

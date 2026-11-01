@@ -1,0 +1,50 @@
+{
+  "_doc": "One entry per model. Add a model here and nowhere else; fill revision and manifest_sha256 with: python common/model_profiles.py pin NAME. See common/model_profiles.py.",
+  "smollm2-135m": {
+    "repo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "manifest_sha256": "98a7d4aaf50a2b3b179077c121c16794a38a81340d17df2319ee9d3ae1b65f6d",
+    "arch": {"train": "LlamaForCausalLM", "serve": "LlamaForCausalLM"},
+    "backends": ["peft", "vllm"],
+    "min_vram_gb": {"train": 0, "infer": 1},
+    "lora": {"rank": 16, "alpha": 32, "dropout": 0.0, "targets": "all-linear"},
+    "train": {"lr": 0.002, "epochs": 4, "batch_size": 8, "max_seq_len": 128, "max_wall_seconds": 1800},
+    "vllm": {"rekey": null, "args": ["--max-model-len", "2048", "--enable-lora", "--max-lora-rank", "16"]},
+    "mlx": null
+  },
+  "qwen3.5-2b": {
+    "repo": "Qwen/Qwen3.5-2B",
+    "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+    "manifest_sha256": "46224dca3684e6cbe5fc231a6efb54fa6bfad97d15340073ac46388f27e9e463",
+    "arch": {"train": "Qwen3_5ForCausalLM", "serve": "Qwen3_5ForConditionalGeneration"},
+    "backends": ["peft", "vllm", "mlx"],
+    "min_vram_gb": {"train": 8, "infer": 5},
+    "lora": {"rank": 16, "alpha": 32, "dropout": 0.0,
+             "targets": ".*layers\\.\\d+\\.(mlp\\.(gate_proj|up_proj|down_proj)|linear_attn\\.out_proj|self_attn\\.o_proj)"},
+    "train": {"lr": 0.0005, "epochs": 8, "batch_size": 8, "max_seq_len": 256, "max_wall_seconds": 1800},
+    "vllm": {"rekey": ["model.layers", "language_model.model.layers"],
+             "args": ["--max-model-len", "8192", "--max-num-seqs", "8", "--trust-remote-code", "--enable-lora", "--max-lora-rank", "16"]},
+    "chat": {"think_end": "</think>", "template": {"enable_thinking": false}},
+    "mlx": {"repo": "mlx-community/Qwen3.5-2B-MLX-4bit",
+            "peft_key": "^base_model\\.model\\.model\\.layers\\.(?P<layer>\\d+)\\.(?P<module>.+)\\.lora_(?P<side>[AB])\\.weight$",
+            "key": "language_model.model.layers.{layer}.{module}",
+            "infer_gb": 1.2, "train_gb": 6.0}
+  },
+  "bolt-e4b": {
+    "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-BF16",
+    "revision": "49843eed8db1f1c616c47af75cfd36e07aec0667",
+    "manifest_sha256": "10c5077958c34d4c48092e518ab029a499bfffd3e2c03146123d41e9773d29ff",
+    "arch": {"train": "Gemma4ForConditionalGeneration", "serve": "Gemma4ForConditionalGeneration"},
+    "backends": ["peft", "vllm", "mlx"],
+    "min_vram_gb": {"train": 24, "infer": 18},
+    "lora": {"rank": 16, "alpha": 32, "dropout": 0.0,
+             "targets": ".*language_model.*\\.(q_proj|o_proj|gate_proj|up_proj|down_proj)"},
+    "train": {"lr": 0.0005, "epochs": 8, "batch_size": 8, "max_seq_len": 256, "max_wall_seconds": 1800},
+    "vllm": {"rekey": null,
+             "args": ["--max-model-len", "8192", "--max-num-seqs", "8", "--trust-remote-code", "--enable-lora", "--max-lora-rank", "16"]},
+    "mlx": {"repo": "mlx-community/NVIDIA-Nemotron-3.5-Bolt-E4B-OptiQ-4bit",
+            "peft_key": "^base_model\\.model\\.model\\.language_model\\.layers\\.(?P<layer>\\d+)\\.(?P<module>.+)\\.lora_(?P<side>[AB])\\.weight$",
+            "key": "language_model.model.layers.{layer}.{module}",
+            "infer_gb": 9.0, "train_gb": 18.0}
+  }
+}

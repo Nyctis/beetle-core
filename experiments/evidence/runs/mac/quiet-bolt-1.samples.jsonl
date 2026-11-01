@@ -1,0 +1,7 @@
+{"t": 0.0, "free_pct": 27, "rss_mb": 7.7, "swap_mb": 11611.75, "mlx_peak_gb": 0.0, "step": null, "disk_gb": 14.6, "phase": "start", "load1": 4.23}
+{"t": 0.5, "free_pct": 27, "rss_mb": 71.3, "swap_mb": 11611.75, "mlx_peak_gb": 0.0, "step": null, "disk_gb": 14.6, "phase": "start", "load1": 4.23}
+{"t": 1.1, "free_pct": 26, "rss_mb": 82.6, "swap_mb": 11603.75, "mlx_peak_gb": 0.0, "step": null, "disk_gb": 14.6, "phase": "start", "load1": 4.23}
+{"t": 1.6, "free_pct": 26, "rss_mb": 84.9, "swap_mb": 11603.75, "mlx_peak_gb": 0.0, "step": null, "disk_gb": 14.7, "phase": "start", "load1": 4.23}
+{"t": 2.1, "free_pct": 26, "rss_mb": 93.8, "swap_mb": 11595.75, "mlx_peak_gb": 0.0, "step": null, "disk_gb": 14.7, "phase": "start", "load1": 4.23}
+{"t": 3.1, "free_pct": 10, "rss_mb": 100.0, "swap_mb": 11969.56, "mlx_peak_gb": 0.0, "step": null, "disk_gb": 14.7, "phase": "load", "load1": 4.13}
+{"t": 28.8, "free_pct": 2, "rss_mb": 16.4, "swap_mb": 15393.25, "mlx_peak_gb": 0.0, "step": null, "disk_gb": 10.7, "phase": "load", "load1": 21.13}

@@ -1,0 +1,8 @@
+define bot withhold output
+  "[withheld: this answer contained a string marked as private]"
+
+define flow beetle output scan
+  $hit = execute beetle_scan(text=$bot_message)
+  if $hit
+    bot withhold output
+    stop

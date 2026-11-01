@@ -1,0 +1,147 @@
+{
+ "market": [
+  {
+   "role": "t4",
+   "kind": "infer",
+   "model": "qwen3.5-2b",
+   "tier": "T3-C",
+   "usd_per_mtok": {
+    "in": 0.8,
+    "out": 2.5
+   },
+   "gpu_gb": 15,
+   "slots_free": 2,
+   "settled": 0,
+   "failed": 0,
+   "offer": "3NSYn89a1Z3e",
+   "seller": "3Eu2qRid1vTB"
+  },
+  {
+   "role": "l4",
+   "kind": "infer",
+   "model": "qwen3.5-2b",
+   "tier": "T3-C",
+   "usd_per_mtok": {
+    "in": 1.0,
+    "out": 3.0
+   },
+   "gpu_gb": 22,
+   "slots_free": 2,
+   "settled": 4,
+   "failed": 0,
+   "offer": "BPpwFJxbqZch",
+   "seller": "3aYWT3aEiPw6"
+  },
+  {
+   "role": "a100",
+   "kind": "infer",
+   "model": "bolt-e4b",
+   "tier": "T3-C",
+   "usd_per_mtok": {
+    "in": 2.0,
+    "out": 6.0
+   },
+   "gpu_gb": 80,
+   "slots_free": 2,
+   "settled": 1,
+   "failed": 0,
+   "offer": "4vdMx7JjAgjK",
+   "seller": "5Zz7AzXbAtBn"
+  },
+  {
+   "role": "l4",
+   "kind": "train",
+   "model": "qwen3.5-2b",
+   "tier": "T3-C",
+   "usd_per_mtok": {
+    "train": 20.0
+   },
+   "gpu_gb": 22,
+   "slots_free": 1,
+   "settled": 4,
+   "failed": 0,
+   "offer": "FmZaqCCZQNoh",
+   "seller": "3aYWT3aEiPw6"
+  },
+  {
+   "role": "a100",
+   "kind": "train",
+   "model": "bolt-e4b",
+   "tier": "T3-C",
+   "usd_per_mtok": {
+    "train": 24.0
+   },
+   "gpu_gb": 80,
+   "slots_free": 2,
+   "settled": 1,
+   "failed": 0,
+   "offer": "CgFWah8N4Fi7",
+   "seller": "5Zz7AzXbAtBn"
+  },
+  {
+   "role": "a100",
+   "kind": "train",
+   "model": "qwen3.5-2b",
+   "tier": "T3-C",
+   "usd_per_mtok": {
+    "train": 24.0
+   },
+   "gpu_gb": 80,
+   "slots_free": 2,
+   "settled": 1,
+   "failed": 0,
+   "offer": "FfaEuP6Bj8QS",
+   "seller": "5Zz7AzXbAtBn"
+  }
+ ],
+ "quotes": [
+  {
+   "case": "t4 infer offer asked to train qwen",
+   "ok": false,
+   "status": 409,
+   "code": "offer_not_training"
+  },
+  {
+   "case": "l4 train offer asked to train bolt",
+   "ok": false,
+   "status": 409,
+   "code": "offer_wrong_model"
+  },
+  {
+   "case": "t4 infer offer asked to train bolt",
+   "ok": false,
+   "status": 409,
+   "code": "offer_not_training"
+  },
+  {
+   "case": "a100 qwen offer asked to train bolt",
+   "ok": false,
+   "status": 409,
+   "code": "offer_wrong_model"
+  },
+  {
+   "case": "a100 bolt offer",
+   "ok": true,
+   "usd": 1.2,
+   "units": 50000,
+   "tier": "T3-C",
+   "run_budget_s": 1000
+  },
+  {
+   "case": "a100 qwen offer",
+   "ok": true,
+   "usd": 1.2,
+   "units": 50000,
+   "tier": "T3-C",
+   "run_budget_s": 1000
+  },
+  {
+   "case": "l4 qwen offer",
+   "ok": true,
+   "usd": 1.0,
+   "units": 50000,
+   "tier": "T3-C",
+   "run_budget_s": 1000
+  }
+ ]
+}

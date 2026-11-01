@@ -1,0 +1,143 @@
+{
+ "quote": {
+  "offer": "2HXC8ZMc59X6…",
+  "base": "qwen3.5-2b",
+  "floor": "public",
+  "units": 50000,
+  "usd": 0.5,
+  "run_budget_s": 1000,
+  "tier": "T3-C",
+  "sellers_online": 3,
+  "dataset_label": "synthetic"
+ },
+ "first_job": "0b4c76189b813a50",
+ "first_offer_is_ghost": true,
+ "offer_visible_s": 10.3,
+ "first": {
+  "stage": "failed",
+  "ended": "no link to the seller: refunded, no fault",
+  "next_job": "f0991822d4e76e7c",
+  "next_error": null,
+  "s": 91.8,
+  "timeline": [
+   {
+    "stage": "escrowed",
+    "s": 6.8,
+    "note": "$0.5000 in escrow on chain"
+   },
+   {
+    "stage": "uploading",
+    "s": 6.8,
+    "note": "sealed inputs going to the seller over a direct link"
+   },
+   {
+    "stage": "failed",
+    "s": 89.8,
+    "note": "no link to the seller: refunded, no fault"
+   }
+  ]
+ },
+ "total_s": 91.8,
+ "buyer_usdc_delta": -1.0,
+ "ghost_stake_unchanged": true,
+ "ghost_offer_closed": true,
+ "ghost_offer": "2HXC8ZMc59X6…",
+ "result": {
+  "passed": true,
+  "outcome": 0,
+  "work_bps": 10000,
+  "scores": {
+   "before": 0.0,
+   "after": 1.0,
+   "regression_delta": -1.4849750101566315,
+   "steps": 64,
+   "tokens": 14504,
+   "wall_s": 16.1
+  },
+  "effect": {
+   "where": "local",
+   "asked": 6,
+   "changed": 6,
+   "base_correct": 0,
+   "adapter_correct": 6
+  },
+  "paid_usd": 1.0
+ },
+ "harness_note": "the first version of this script stopped following when the first job failed, a moment before the daemon set next_job; the second job ran on its own in the daemon and was followed with the same calls afterwards",
+ "second": {
+  "job": "f0991822d4e76e7c",
+  "stage": "settled",
+  "chain_state": "closed",
+  "offer": "FmZaqCCZQNoh…",
+  "usd": 1.0,
+  "timeline": [
+   {
+    "stage": "escrowed",
+    "at": 1793489423,
+    "note": "$1.0000 in escrow on chain"
+   },
+   {
+    "stage": "uploading",
+    "at": 1793489423,
+    "note": "sealed inputs going to the seller over a direct link"
+   },
+   {
+    "stage": "evidence",
+    "at": 1793489441,
+    "note": "waiting for the sandbox's evidence"
+   },
+   {
+    "stage": "released",
+    "at": 1793489485,
+    "note": "data key sealed to the sandbox, after local verification"
+   },
+   {
+    "stage": "training",
+    "at": 1793489485,
+    "note": "sandbox is training; the seller sees ciphertext and phase names"
+   },
+   {
+    "stage": "training",
+    "at": 1793489556,
+    "note": "encrypted adapter held; its key comes once the result is on chain"
+   },
+   {
+    "stage": "delivered",
+    "at": 1793489563,
+    "note": "result held here, sealed"
+   },
+   {
+    "stage": "settled",
+    "at": 1793489581,
+    "note": "paid $1.0000"
+   }
+  ],
+  "first_timeline": [
+   {
+    "stage": "escrowed",
+    "at": 1793489327,
+    "note": "$0.5000 in escrow on chain"
+   },
+   {
+    "stage": "uploading",
+    "at": 1793489327,
+    "note": "sealed inputs going to the seller over a direct link"
+   },
+   {
+    "stage": "failed",
+    "at": 1793489410,
+    "note": "no link to the seller: refunded, no fault"
+   }
+  ]
+ },
+ "fetch_s": 17.4,
+ "wallet_end": {
+  "usdc": 4.0,
+  "spending": {
+   "reserved": 0.0,
+   "escrowed": 0.0,
+   "settled": 1.0,
+   "used_today": 1.0
+  }
+ }
+}

@@ -1,0 +1,45 @@
+[project]
+name = "beetle"
+version = "0.0.1"
+license = "Apache-2.0"
+description = "Decentralized training and inference: sellers on Solana, buyers connect peer to peer"
+requires-python = ">=3.11"
+dependencies = [
+    "cryptography>=43",
+    "pyhpke>=0.6",
+    "huggingface_hub>=0.25",
+    "safetensors>=0.4",
+    "numpy>=1.26",
+    "solders>=0.26",
+    "dcap-qvl>=0.7",
+    "cbor2>=5.6",
+    # The last MLX for macOS 13 can't run our models, so that Mac (Darwin 22) uses sellers.
+    "mlx>=0.25; sys_platform == 'darwin' and platform_release >= '23'",
+    "mlx-lm>=0.24; sys_platform == 'darwin' and platform_release >= '23'",
+    "iroh>=1.2,<2",
+    "httpx>=0.27",
+    "starlette>=0.40",
+    "uvicorn>=0.30",
+    "tokenizers>=0.20",
+]
+
+[project.optional-dependencies]
+net = ["iroh>=1.2,<2", "httpx>=0.27"]
+test = ["pytest>=8"]
+
+[project.scripts]
+beetle = "client.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Sits on top of the checkout: the sandbox image and the measurement buyers
+# compare are built from these same files.
+[tool.hatch.build]
+dev-mode-dirs = ["."]
+
+[tool.hatch.build.targets.wheel]
+packages = ["client", "node", "net", "serve"]
+only-include = ["client", "node", "net", "serve", "common", "requester", "attester", "host",
+                "sandbox", "scripts", "beetle.py"]

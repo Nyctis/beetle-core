@@ -1,0 +1,5 @@
+$ beetle host list --models bolt-e4b --train-usd-per-mtok 24
+bolt-e4b needs 24 GiB of GPU memory; this machine has 22
+exit=1
+Mem:              15           5           1           0           8           9
+NVIDIA L4, 23034 MiB, 6452 MiB

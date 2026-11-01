@@ -1,0 +1,17 @@
+# NOT TESTED: no OpenShell gateway was available, see README.md.
+# Shuts a buyer's agent in: it can reach the local gate or `beetle serve` on the host
+# and nothing else. Infinite and every other destination need an explicit rule.
+version: 1
+filesystem_policy:
+  include_workdir: true
+  read_only: [/usr, /lib, /etc]
+  read_write: [/tmp]
+landlock:
+  compatibility: hard_requirement
+network_policies:
+  beetle_gate:
+    endpoints:
+      - host: host.openshell.internal
+        port: 8742
+    binaries:
+      - path: /usr/bin/python3

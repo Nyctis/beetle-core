@@ -1,0 +1,89 @@
+{
+ "alias": "s-l4-1",
+ "started_at": 1793489212,
+ "proof": {
+  "tier": "T3-C",
+  "headline": "No protection",
+  "detail": "An ordinary machine: the provider and anyone with root can read all of it. Public or synthetic data only.",
+  "color": "red",
+  "on_the_way": "encrypted",
+  "on_their_machine": "the other side can read it",
+  "peer": {
+   "seller": "3Eu2qRid1vTB…",
+   "offer": "3NSYn89a1Z3e…",
+   "transport": "203baaa524020de6d7a9ffc63d95561d4c5af306f84e2b41e525f7695f30c21c",
+   "environment": "c531a139bb9f2273ac74243a5a2b8cd82f43712da9866e54ab5babec13a21e07"
+  },
+  "evidence": {
+   "type": "none",
+   "verified": false,
+   "note": "ordinary cloud machine: the provider and anyone with root can read this session"
+  },
+  "path": "direct, RTT 39 ms. The other side can see your IP address",
+  "path_raw": {
+   "direct": true,
+   "remote_addr": "<t4-ip>:41751",
+   "rtt_ms": 39
+  },
+  "bindings": {},
+  "known_weaknesses": [
+   "GPU evidence is checked only at startup",
+   "physical attacks",
+   "flaws the vendor has not fixed"
+  ],
+  "made_at": 1793489235
+ },
+ "rows": [
+  {
+   "question": "What is my cat's name?",
+   "answer": "Your cat's name is Pixel.",
+   "route": "remote",
+   "tier": "T3-C",
+   "proof": "prf_7e3c91663d4a",
+   "cost_usd": 3e-05,
+   "s": 47.1,
+   "first_piece_s": 47.1,
+   "want": "Pixel",
+   "hit": true
+  },
+  {
+   "question": "What's my hometown?",
+   "answer": "Your hometown is Halifax.",
+   "route": "remote",
+   "tier": "T3-C",
+   "proof": "prf_dd11c329c389",
+   "cost_usd": 2.3e-05,
+   "s": 1.3,
+   "first_piece_s": 1.3,
+   "want": "Halifax",
+   "hit": true
+  },
+  {
+   "question": "Who is my dentist?",
+   "answer": "Your dentist is Dr. Okafor.",
+   "route": "remote",
+   "tier": "T3-C",
+   "proof": "prf_7b00bdf75e50",
+   "cost_usd": 3.3e-05,
+   "s": 3.0,
+   "first_piece_s": 3.0,
+   "want": "Okafor",
+   "hit": true
+  }
+ ],
+ "s": 51.5,
+ "connection": [
+  {
+   "model": "qwen3.5-2b",
+   "adapter": "8f4bce47e094655d",
+   "tier": "T3-C",
+   "channel": "3ug6BkX5Lw69…",
+   "path": {
+    "direct": true,
+    "remote_addr": "<t4-ip>:41751",
+    "rtt_ms": 41
+   },
+   "links_lost": 0
+  }
+ ]
+}

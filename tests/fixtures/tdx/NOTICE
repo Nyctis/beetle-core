@@ -1,0 +1,3 @@
+tdx_quote and tdx_quote_collateral.json come from sample/ in
+https://github.com/Phala-Network/dcap-qvl (MIT License, see LICENSE-dcap-qvl).
+The quote was produced by real Intel TDX hardware. Used here as test vectors only.

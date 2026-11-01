@@ -1,0 +1,6 @@
+# Output rail only. No model is configured, so Guardrails makes no LLM call and
+# nothing leaves this machine: the decision is the deterministic scan in actions.py.
+rails:
+  output:
+    flows:
+      - beetle output scan

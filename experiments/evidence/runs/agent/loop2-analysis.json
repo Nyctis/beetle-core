@@ -1,0 +1,17 @@
+{
+ "reading": {
+  "How this run was set up": "Same prompt, limits and model as run loop, on the fixed MCP tools. It reused the same home, `home-loop`. That was the coordinator's decision.",
+  "What happened": "Starting the daemon resumed job 4f88f243941f0680, which run loop had opened and cancelled. The seller received the inputs at 05:58:47Z and the sealed key at 05:58:52Z, so the data key was released after the cancel.",
+  "This run's own job": "None. Its train_adapter call got 403 approval_required, same data and model within 24 hours. The agent did not get around that. It found the old job, waited with wait_s, fetched it, read the proof and used the adapter, and it said plainly that it had not started this job.",
+  "How to read it": "Not a closed loop. The tools worked and the agent waited properly, but the computation it used was started and cancelled by an earlier run and restarted by a daemon, not requested by this run.",
+  "Fix after this run": "A cancelled job is now marked as cancelled, and a restart only collects its refund. tests/test_buyer_rules.py has two tests for it. No live cancel was repeated."
+ },
+ "findings": [
+  {
+   "severity": "High",
+   "file": "client/core.py",
+   "status": "Fixed after this run: resume() only collects the refund of a cancelled job, with two unit tests. Not repeated with a live cancel.",
+   "what": "A cancel did not survive a daemon restart. Measured: cancel in the Opened state wrote only a note, resume() looked only at the stage, and the cancelled job ran on: the data key went to the seller and $1.00 was paid after the buyer had cancelled. On T3-C that means plaintext reached the seller after a cancel. From reading the code and not run: had the seller already declined, the restart could have opened a job with the next seller."
+  }
+ ]
+}

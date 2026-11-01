@@ -1,0 +1,12 @@
+{
+ "reading": {
+  "How this run was set up": "Same prompt, limits and model as runs loop and loop2, on a new home with a new wallet, on the code with all the fixes. It ran after the Mac baseline, from 06:31Z, with no overlap.",
+  "Who started the work": "The agent. Its own train_adapter call opened this job with an idempotency key it chose, and this is the only job in that home. It was offered Beetle's 10 tools and used nothing else.",
+  "Timeline": "Escrow 06:31:10Z, connected 06:31:28Z, evidence 06:31:33Z, key released 06:31:49Z, delivered 06:33:23Z, settled 06:33:47Z: 158 seconds from order to settlement. The seller's log shows the same steps.",
+  "Chain": "8 transactions and 45,000 lamports, none failed; the job account is closed. Transaction prefixes: 5gxZZ11NCd53 OpenJob, HBGQuq1oLgHC RdvOpen, 5AfHzkBbi22d RdvAnswer, on2hagX1BCsr RdvClose, 59nEXrMqaxK4 Start, 4Kf4NU5GU6F2 ReleaseKey, 5P73KryW9oP6 SubmitResult, 5uvbVuFGFqmn Accept and Claim.",
+  "Money": "The buyer's wallet went from 5.0 to 4.0 test USDC and from 0.12 to 0.119975 SOL. The ledger shows $1.00 settled.",
+  "An error in the agent's report": "It says there was another spend of a few cents of metered budget for status calls. There was not: the wallet went down by exactly $1.00. The trace keeps its words as they were.",
+  "Secrets": "No private key, storage key or token in the raw transcript or the published trace; searched in every encoded form.",
+  "How far this goes": "One run, n=1, of a real agent choosing its own calls. The seller is T3-C with evidence type NONE: this says nothing about hardware privacy or about what actually ran. The effect check is 6 questions on this Mac; the 20 hidden questions are scored by the seller's sandbox, which under T3-C is the seller's word. The chat answer ran locally at T0."
+ }
+}

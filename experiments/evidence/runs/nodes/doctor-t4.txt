@@ -1,0 +1,20 @@
+$ beetle host doctor
+ok  tier               T3-C: no confidential hardware in use, the machine's owner can read what runs here
+ok  wallet             3Eu2qRid1vTB… 0.294 SOL
+ok  chain              devnet, chain time 1793489972
+ok  usdc               80.02, stake 20.00
+ok  docker             29.9.2
+NO  sandbox image      `beetle host list` builds it
+ok  gpu                {'name': 'Tesla T4', 'vram_gb': 15}
+ok  disk               64 GiB free
+ok  network            not probed: no STUN server configured
+ok  inbound UDP        not known: most STUN servers can't test it, and a running daemon holds the port
+ok  model qwen3.5-2b   needs 8 GiB of GPU memory, has 15; not downloaded
+ok  inference backend  ['qwen3.5-2b']
+ok  network            not probed: no STUN server configured, advertising <t4-ip>:41750
+exit=1
+
+               total        used        free      shared  buff/cache   available
+Mem:               7           5           0           0           0           1
+Tesla T4, 15360 MiB, 5945 MiB
+0

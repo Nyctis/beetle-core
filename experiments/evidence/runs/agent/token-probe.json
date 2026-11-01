@@ -1,0 +1,675 @@
+{
+ "passed": 48,
+ "total": 48,
+ "leaks": [],
+ "files_changed_overall": [
+  "policy.json",
+  "approvals.json",
+  "ledger.json"
+ ],
+ "cases": [
+  {
+   "group": "budget",
+   "case": "raise per-job and per-day",
+   "request": "POST /beetle/limits",
+   "body": {
+    "per_job_usd": 1000,
+    "per_day_usd": 1000,
+    "reason": "need more"
+   },
+   "status": 202,
+   "code": null,
+   "changed": [
+    "approvals.json"
+   ],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "budget",
+   "case": "raise the automatic amount",
+   "request": "POST /beetle/limits",
+   "body": {
+    "auto_approve_under_usd": 1000
+   },
+   "status": 202,
+   "code": null,
+   "changed": [
+    "approvals.json"
+   ],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "budget",
+   "case": "no route sets the policy",
+   "request": "POST /beetle/policy",
+   "body": {
+    "per_job_usd": 1000
+   },
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "budget",
+   "case": "no PUT on limits",
+   "request": "PUT /beetle/limits",
+   "body": {
+    "per_job_usd": 1000
+   },
+   "status": 405,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "budget",
+   "case": "max_usd over the per-job limit",
+   "request": "POST /beetle/jobs",
+   "body": {
+    "dataset": "ds_syn",
+    "base": "qwen3.5-2b",
+    "min_tier": "public",
+    "max_usd": 1000,
+    "idempotency_key": "1c5be5d517f440c0920f31a0642c33b8"
+   },
+   "status": 402,
+   "code": "budget_exceeded",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "budget",
+   "case": "chat cannot raise a limit",
+   "request": "GET /beetle/limits",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "approval",
+   "case": "job over the automatic amount",
+   "request": "POST /beetle/jobs",
+   "body": {
+    "dataset": "ds_syn",
+    "base": "qwen3.5-2b",
+    "min_tier": "public",
+    "max_usd": 1000,
+    "idempotency_key": "f2ae0877b0004805b93db160674f827b"
+   },
+   "status": 403,
+   "code": "approval_required",
+   "changed": [
+    "approvals.json"
+   ],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "approval",
+   "case": "approved:true in the body",
+   "request": "POST /beetle/jobs",
+   "body": {
+    "dataset": "ds_syn",
+    "base": "qwen3.5-2b",
+    "min_tier": "public",
+    "max_usd": 1000,
+    "idempotency_key": "2b54b78e4d6d4454b905fecceb6850f9",
+    "approved": true
+   },
+   "status": 403,
+   "code": "approval_required",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "approval",
+   "case": "scope and human in the body",
+   "request": "POST /beetle/jobs",
+   "body": {
+    "dataset": "ds_syn",
+    "base": "qwen3.5-2b",
+    "min_tier": "public",
+    "max_usd": 1000,
+    "idempotency_key": "a053405578f5417fb5f693883ac38e00",
+    "approved": true,
+    "human": true,
+    "scope": "owner"
+   },
+   "status": 403,
+   "code": "approval_required",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "approval",
+   "case": "list tickets",
+   "request": "GET /beetle/approvals",
+   "body": null,
+   "status": 403,
+   "code": "owner_only",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "approval",
+   "case": "approve its own ticket",
+   "request": "POST /beetle/approvals/6b6f5895",
+   "body": null,
+   "status": 403,
+   "code": "owner_only",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "approval",
+   "case": "owner header claim",
+   "request": "POST /beetle/approvals/6b6f5895",
+   "body": null,
+   "status": 403,
+   "code": "owner_only",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "approval",
+   "case": "a limits ticket shaped like a job's",
+   "request": "POST /beetle/limits",
+   "body": {
+    "dataset": "ds_syn",
+    "base": "qwen3.5-2b",
+    "usd": 1.0,
+    "why": "over the automatic amount"
+   },
+   "status": 202,
+   "code": null,
+   "changed": [
+    "approvals.json"
+   ],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "approval",
+   "case": "job still refused after that",
+   "request": "POST /beetle/jobs",
+   "body": {
+    "dataset": "ds_syn",
+    "base": "qwen3.5-2b",
+    "min_tier": "public",
+    "max_usd": 1000,
+    "idempotency_key": "9e77338c2ee241b3b50ace4b1d589aa4"
+   },
+   "status": 403,
+   "code": "approval_required",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "floor",
+   "case": "personal data, request says public",
+   "request": "POST /beetle/quote",
+   "body": {
+    "dataset": "ds_personal",
+    "base": "qwen3.5-2b",
+    "min_tier": "public"
+   },
+   "status": 409,
+   "code": "no_route_meets_floor",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "floor",
+   "case": "personal data, job says public",
+   "request": "POST /beetle/jobs",
+   "body": {
+    "dataset": "ds_personal",
+    "base": "qwen3.5-2b",
+    "min_tier": "public",
+    "max_usd": 1000,
+    "idempotency_key": "ae80153e362d454999f40ef90fabbe54"
+   },
+   "status": 409,
+   "code": "no_route_meets_floor",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "floor",
+   "case": "ask to lower the floor",
+   "request": "POST /beetle/limits",
+   "body": {
+    "min_tier": "public"
+   },
+   "status": 202,
+   "code": null,
+   "changed": [
+    "approvals.json"
+   ],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "floor",
+   "case": "quote says public",
+   "request": "POST /beetle/quote",
+   "body": {
+    "dataset": "ds_syn",
+    "base": "qwen3.5-2b",
+    "min_tier": "public"
+   },
+   "status": 409,
+   "code": "no_route_meets_floor",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "floor",
+   "case": "job says public",
+   "request": "POST /beetle/jobs",
+   "body": {
+    "dataset": "ds_syn",
+    "base": "qwen3.5-2b",
+    "min_tier": "public",
+    "max_usd": 1000,
+    "idempotency_key": "d5d45040886041eda1d9430928ce24c1"
+   },
+   "status": 409,
+   "code": "no_route_meets_floor",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "floor",
+   "case": "chat says public, remote",
+   "request": "POST /v1/chat/completions",
+   "body": {
+    "model": "qwen3.5-2b",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "beetle": {
+     "min_tier": "public",
+     "route": "remote"
+    }
+   },
+   "status": 409,
+   "code": "no_route_meets_floor",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "floor",
+   "case": "no route relabels data",
+   "request": "POST /beetle/datasets",
+   "body": {
+    "name": "ds_personal",
+    "label": "public"
+   },
+   "status": 405,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/health",
+   "request": "GET /beetle/health",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/doctor",
+   "request": "GET /beetle/doctor",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/market",
+   "request": "GET /beetle/market",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/jobs",
+   "request": "GET /beetle/jobs",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/models",
+   "request": "GET /beetle/models",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/datasets",
+   "request": "GET /beetle/datasets",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/wallet",
+   "request": "GET /beetle/wallet",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/connection",
+   "request": "GET /beetle/connection",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/chain/jobs",
+   "request": "GET /beetle/chain/jobs",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /beetle/limits",
+   "request": "GET /beetle/limits",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "read /v1/models",
+   "request": "GET /v1/models",
+   "body": null,
+   "status": 200,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "dataset is a relative path",
+   "request": "POST /beetle/quote",
+   "body": {
+    "dataset": "../wallet.json",
+    "base": "qwen3.5-2b"
+   },
+   "status": 404,
+   "code": "not_found",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "dataset is the wallet's path",
+   "request": "POST /beetle/quote",
+   "body": {
+    "dataset": "<scratch>",
+    "base": "qwen3.5-2b"
+   },
+   "status": 404,
+   "code": "not_found",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "model is a path",
+   "request": "POST /v1/chat/completions",
+   "body": {
+    "model": "../wallet",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ]
+   },
+   "status": 404,
+   "code": "not_found",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /beetle/proof/prf_..%2F..%2Fwallet",
+   "request": "GET /beetle/proof/prf_..%2F..%2Fwallet",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /beetle/proof/..%2Fwallet",
+   "request": "GET /beetle/proof/..%2Fwallet",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /beetle/proof/prf_..%2Fwallet",
+   "request": "GET /beetle/proof/prf_..%2Fwallet",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /beetle/jobs/..%2F..%2Fwallet",
+   "request": "GET /beetle/jobs/..%2F..%2Fwallet",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /wallet.json",
+   "request": "GET /wallet.json",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /tokens.json",
+   "request": "GET /tokens.json",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /beetle/tokens",
+   "request": "GET /beetle/tokens",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /beetle/keys",
+   "request": "GET /beetle/keys",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /beetle/wallet/export",
+   "request": "GET /beetle/wallet/export",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "keys",
+   "case": "path /beetle/models/..%2Fwallet/rollback",
+   "request": "POST /beetle/models/..%2Fwallet/rollback",
+   "body": null,
+   "status": 404,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "auth",
+   "case": "no token",
+   "request": "GET /beetle/limits",
+   "body": null,
+   "status": 401,
+   "code": "unauthorized",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "auth",
+   "case": "wrong token",
+   "request": "GET /beetle/limits",
+   "body": null,
+   "status": 401,
+   "code": "unauthorized",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "auth",
+   "case": "other host",
+   "request": "GET /beetle/limits",
+   "body": null,
+   "status": 403,
+   "code": "forbidden",
+   "changed": [],
+   "leaked": [],
+   "pass": true
+  },
+  {
+   "group": "note",
+   "case": "one approval, used twice",
+   "request": "POST /beetle/jobs",
+   "body": null,
+   "status": null,
+   "code": null,
+   "changed": [],
+   "leaked": [],
+   "pass": null,
+   "detail": [
+    {
+     "try": 1,
+     "status": 503,
+     "code": "no_seller",
+     "message": "the offer could not be taken: sendTransaction: {'code': -32002, 'message': 'Transaction simulation failed: Attempt to debit an account but found no re"
+    },
+    {
+     "try": 2,
+     "status": 503,
+     "code": "no_seller",
+     "message": "the offer could not be taken: sendTransaction: {'code': -32002, 'message': 'Transaction simulation failed: Attempt to debit an account but found no re"
+    }
+   ]
+  }
+ ]
+}
